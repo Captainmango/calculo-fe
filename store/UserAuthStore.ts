@@ -1,9 +1,13 @@
-import { loadavg } from "os"
 import create from "zustand"
-import { redux } from "zustand/middleware"
+import { devtools, redux } from "zustand/middleware"
 import { User } from "../models/User"
 
 const types = { logIn: "LOG_IN", logOut: "LOG_OUT", createUser: "CREATE_USER" }
+
+type UserPayload = {
+    type: string,
+    body: UserState
+}
 
 interface UserState { 
     user: User | null,
@@ -15,16 +19,16 @@ let initialState: UserState = {
     loading: false
 }
 
-const reducer = (state, { type, payload }) => {
-    switch(type) {
+const reducer = (state:UserState, payload:UserPayload) => {
+    switch(payload.type) {
         case types.logIn:
             return {
-                user: state.user = payload.user,
-                loading: state.loading = payload.loading
+                user: state.user = payload.body.user,
+                loading: state.loading = payload.body.loading
             }
         default:
             return state
     }
 }
 
-export const useStore = create(redux(reducer, initialState))
+export const useStore = create(devtools(redux(reducer, initialState)))
