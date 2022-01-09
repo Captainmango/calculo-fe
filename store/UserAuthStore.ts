@@ -1,4 +1,4 @@
-import create from "zustand"
+import create, { GetState, SetState, StoreApi } from "zustand"
 import { devtools, redux } from "zustand/middleware"
 import { User } from "../models/User"
 
@@ -9,7 +9,7 @@ type UserPayload = {
     body: UserState
 }
 
-interface UserState { 
+interface UserState {
     user: User | null,
     loading: boolean
 }
@@ -19,8 +19,8 @@ let initialState: UserState = {
     loading: false
 }
 
-const reducer = (state:UserState, payload:UserPayload) => {
-    switch(payload.type) {
+const reducer = (state: UserState, payload: UserPayload) => {
+    switch (payload.type) {
         case types.logIn:
             return {
                 user: state.user = payload.body.user,
@@ -31,4 +31,4 @@ const reducer = (state:UserState, payload:UserPayload) => {
     }
 }
 
-export const useStore = create(devtools(redux(reducer, initialState)))
+export const userStore = create<StoreApi<UserState>>(devtools(redux(reducer, initialState)))

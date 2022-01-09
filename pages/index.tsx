@@ -1,11 +1,11 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { useStore } from '../store/UserAuthStore'
+import { userStore } from '../store/UserAuthStore'
 
 
 const Home: NextPage = () => {
-  const [useStor, api] = useStore
-  
+  const [useStore, api] = userStore
+
   function testfunc() {
     api.dispatch({ type: "LOG_IN", body: { user: null, loading: true } })
   }
