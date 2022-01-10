@@ -1,10 +1,11 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { userStore } from '../store/UserAuthStore'
+import { UserState, UserStore } from '../store/UserAuthStore'
 
 
 const Home: NextPage = () => {
-  const [useStore, api] = userStore
+  //@ts-ignore
+  const [useStore, api] = UserStore
 
   function testfunc() {
     api.dispatch({ type: "LOG_IN", body: { user: null, loading: true } })
@@ -12,7 +13,7 @@ const Home: NextPage = () => {
   return (<>
     <h1 className='card-panel teal lighten-2 center-align'>Test entry</h1>
     <button onClick={() => testfunc()}>Click me</button>
-    <p>{useStore(state=>state.loading)}</p>
+    <p>{useStore((state: UserState)=>state.loading)}</p>
   </>
   )
 }
