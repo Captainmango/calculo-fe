@@ -1,9 +1,14 @@
+import { Container, Input } from '@chakra-ui/react';
 import type { NextPage } from 'next'
 
 const Index: NextPage = () => {
 
   return (
-    <div>Hello</div>
+    <>
+      <Container>
+        <Input variant='flushed' placeholder='test input' aria-label='test' />
+      </Container>
+    </>
   )
 };
 
