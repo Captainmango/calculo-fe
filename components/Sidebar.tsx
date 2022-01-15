@@ -38,9 +38,9 @@ const Sidebar = () => {
                     }}
                 />
 
-                <SidebarItem expanded={expanded} url="#" title="Test" icon={FiActivity} />
-                <SidebarItem expanded={expanded} url="#" title="Test" icon={FiActivity} />
-                <SidebarItem expanded={expanded} url="#" title="Test" icon={FiActivity} />
+                <SidebarItem expanded={expanded} url="#" title="Transactions" icon={FiActivity} active={false} description='This is a test description' />
+                <SidebarItem expanded={expanded} url="#" title="Test" icon={FiActivity} active={false} description='This is a test description' />
+                <SidebarItem expanded={expanded} url="#" title="Test" icon={FiActivity} active={false} description='This is a test description' />
 
             </Flex>
 

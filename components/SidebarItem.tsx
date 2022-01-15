@@ -1,12 +1,15 @@
-import { Box, ComponentWithAs, Flex, Icon, IconProps, Menu, MenuButton, Text, Link } from '@chakra-ui/react'
-import React, { ReactChild, ReactElement } from 'react'
+import { Flex, Icon, Menu, MenuButton, Text, Link, MenuList } from '@chakra-ui/react'
+import React from 'react'
 import { IconType } from 'react-icons'
+import { SidebarHoverBox } from './SidebarHoverBox'
 
 type sidebarItemProps = {
     expanded: boolean
     url: string
     icon: IconType
     title: string
+    active: boolean
+    description: string
 }
 
 export const SidebarItem = (props: sidebarItemProps) => {
@@ -23,7 +26,6 @@ export const SidebarItem = (props: sidebarItemProps) => {
             >
                 <Link
                     href={props.url}
-                    passHref
                     //@ts-ignore
                     backgroundColor={props.active && "blue.100"}
                     borderRadius={"8px"}
@@ -47,6 +49,15 @@ export const SidebarItem = (props: sidebarItemProps) => {
                         </Flex>
                     </MenuButton>
                 </Link>
+                <MenuList
+                    py={0}
+                    border="none"
+                    w="200px"
+                    h="200x"
+                    ml={5}
+                >
+                    <SidebarHoverBox title={props.title} icon={props.icon} description={props.description} />
+                </MenuList>
 
             </Menu>
 
