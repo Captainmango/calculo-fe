@@ -1,4 +1,4 @@
-import create, { GetState, SetState, StoreApi } from "zustand"
+import create, { StoreApi } from "zustand"
 import { devtools, redux } from "zustand/middleware"
 import { User } from "../models/User"
 

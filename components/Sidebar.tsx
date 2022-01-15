@@ -1,11 +1,17 @@
 import { Avatar, Divider, Flex, Heading, IconButton } from '@chakra-ui/react'
-import { FiActivity, FiMenu } from 'react-icons/fi'
+import { FiActivity, FiBarChart2, FiBookOpen, FiMenu, FiSettings } from 'react-icons/fi'
 import React, { useState } from 'react'
 import { SidebarItem } from './SidebarItem';
+import { UserStore } from '../store/UserAuthStore';
 
 const Sidebar = () => {
 
     const [expanded, setExpanded] = useState(false);
+
+    //@ts-ignore
+    const [useStore, api] = UserStore
+    //@ts-ignore
+    const user = useStore(state => state.user)
 
     return (
         <Flex
@@ -37,9 +43,8 @@ const Sidebar = () => {
                         setExpanded(!expanded)
                     }}
                 />
-                <SidebarItem expanded={expanded} url="#" title="Transactions" icon={FiActivity} active={false} description='This is a test description' />
-                <SidebarItem expanded={expanded} url="#" title="Test" icon={FiActivity} active={false} description='This is a test description' />
-                <SidebarItem expanded={expanded} url="#" title="Test" icon={FiActivity} active={false} description='This is a test description' />
+                <SidebarItem expanded={expanded} url="/expenses" title="Expenses" icon={FiBookOpen} active={false} description='View and add expenses' />
+                <SidebarItem expanded={expanded} url="/reports" title="Reports" icon={FiBarChart2} active={false} description='View reports on your expenses' />
 
             </Flex>
 
@@ -50,6 +55,7 @@ const Sidebar = () => {
                 alignItems="center"
                 mb={4}
             >
+                <SidebarItem expanded={expanded} url="/settings" title="Settings" icon={FiSettings} active={false} description='Edit user settings' />
                 <Divider display={expanded ? "flex" : "none"} />
                 <Flex
                     mt={4}
@@ -70,7 +76,7 @@ const Sidebar = () => {
                         <Heading
                             as="h3"
                             size="sm"
-                        >Test</Heading>
+                        >{user ? user.firstName : "User"}</Heading>
                     </Flex>
                 </Flex>
             </Flex>

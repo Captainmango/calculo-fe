@@ -21,8 +21,6 @@ export const SidebarItem = (props: sidebarItemProps) => {
             placement='right'
             hasArrow={true}
             arrowSize={7}
-            closeOnMouseDown={true}
-            closeOnClick={true}
         >
             <Flex
                 my="5px"
