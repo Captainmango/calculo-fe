@@ -1,13 +1,12 @@
 import { Container, Input } from '@chakra-ui/react';
 import type { NextPage } from 'next'
+import Sidebar from '../components/Sidebar';
 
 const Index: NextPage = () => {
 
   return (
     <>
-      <Container>
-        <Input variant='flushed' placeholder='test input' aria-label='test' />
-      </Container>
+      <Sidebar />
     </>
   )
 };

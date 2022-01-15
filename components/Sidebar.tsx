@@ -1,0 +1,84 @@
+import { Avatar, Divider, Fade, Flex, Heading, IconButton } from '@chakra-ui/react'
+import { FiMenu, FiUser } from 'react-icons/fi'
+import React, { useState } from 'react'
+
+const Sidebar = () => {
+
+    const [expanded, setExpanded] = useState(false);
+
+    return (
+        <Flex
+            pos="sticky"
+            left="5"
+            h="95vh"
+            my="2.5vh"
+            boxShadow="0 4px 12px 0 rgba(0, 0, 0, 0.05)"
+            w={expanded ? "200px" : "75px"}
+            flexDir="column"
+            justifyContent="space-between"
+            borderRadius={expanded ? "30px" : "15px"}
+            sx={{ transition: "all 0.3s ease-in-out" }}
+        >
+            <Flex
+                p="5%"
+                flexDir="column"
+                w="100"
+                alignItems="center"
+                as="nav"
+            >
+                <IconButton
+                    background="none"
+                    mt={5}
+                    icon={<FiMenu />}
+                    aria-label="Menu button"
+                    _hover={{ background: "none" }}
+                    onClick={() => {
+                        setExpanded(!expanded)
+                    }}
+                />
+
+            </Flex>
+
+            <Flex
+                p="5%"
+                flexDir="column"
+                w="100"
+                alignItems="center"
+
+            >
+                <Divider display={expanded ? "flex" : "none"} />
+                <Flex
+                    mt={4}
+                    align="center"
+                >
+
+                    <Avatar
+                        size="sm"
+                        src="user.svg"
+                    />
+
+                    <Fade
+                        in={expanded}
+                        unmountOnExit={true}
+                    >
+                        <Flex
+                            flexDir="column"
+                            ml={4}
+                            m={4}
+                            display={expanded ? "flex" : "none"}
+                        >
+                            <Heading
+                                as="h3"
+                                size="sm"
+                            >Test</Heading>
+                        </Flex>
+                    </Fade>
+                </Flex>
+            </Flex>
+
+
+        </Flex>
+    )
+}
+
+export default Sidebar
