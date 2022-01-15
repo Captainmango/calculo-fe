@@ -1,7 +1,6 @@
 import { Flex, Icon, Menu, MenuButton, Text, Link, Tooltip } from '@chakra-ui/react'
 import React from 'react'
 import { IconType } from 'react-icons'
-import { SidebarHoverBox } from './SidebarHoverBox'
 
 type sidebarItemProps = {
     expanded: boolean
