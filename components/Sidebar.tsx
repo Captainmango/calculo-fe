@@ -1,5 +1,5 @@
-import { Avatar, Divider, Fade, Flex, Heading, IconButton } from '@chakra-ui/react'
-import { FiActivity, FiMenu, FiUser } from 'react-icons/fi'
+import { Avatar, Divider, Flex, Heading, IconButton } from '@chakra-ui/react'
+import { FiActivity, FiMenu } from 'react-icons/fi'
 import React, { useState } from 'react'
 import { SidebarItem } from './SidebarItem';
 
@@ -32,12 +32,11 @@ const Sidebar = () => {
                     my={5}
                     icon={<FiMenu />}
                     aria-label="Menu button"
-                    _hover={{ background: "none" }}
+                    _hover={{ background: "none", backgroundColor: "blue.100" }}
                     onClick={() => {
                         setExpanded(!expanded)
                     }}
                 />
-
                 <SidebarItem expanded={expanded} url="#" title="Transactions" icon={FiActivity} active={false} description='This is a test description' />
                 <SidebarItem expanded={expanded} url="#" title="Test" icon={FiActivity} active={false} description='This is a test description' />
                 <SidebarItem expanded={expanded} url="#" title="Test" icon={FiActivity} active={false} description='This is a test description' />
