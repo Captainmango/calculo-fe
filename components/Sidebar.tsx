@@ -1,6 +1,7 @@
 import { Avatar, Divider, Fade, Flex, Heading, IconButton } from '@chakra-ui/react'
-import { FiMenu, FiUser } from 'react-icons/fi'
+import { FiActivity, FiMenu, FiUser } from 'react-icons/fi'
 import React, { useState } from 'react'
+import { SidebarItem } from './SidebarItem';
 
 const Sidebar = () => {
 
@@ -17,7 +18,7 @@ const Sidebar = () => {
             flexDir="column"
             justifyContent="space-between"
             borderRadius={expanded ? "30px" : "15px"}
-            sx={{ transition: "all 0.3s ease-in-out" }}
+            sx={{ transition: "all 0.125s ease" }}
         >
             <Flex
                 p="5%"
@@ -28,7 +29,7 @@ const Sidebar = () => {
             >
                 <IconButton
                     background="none"
-                    mt={5}
+                    my={5}
                     icon={<FiMenu />}
                     aria-label="Menu button"
                     _hover={{ background: "none" }}
@@ -37,6 +38,10 @@ const Sidebar = () => {
                     }}
                 />
 
+                <SidebarItem expanded={expanded} url="#" title="Test" icon={FiActivity} />
+                <SidebarItem expanded={expanded} url="#" title="Test" icon={FiActivity} />
+                <SidebarItem expanded={expanded} url="#" title="Test" icon={FiActivity} />
+
             </Flex>
 
             <Flex
@@ -44,7 +49,7 @@ const Sidebar = () => {
                 flexDir="column"
                 w="100"
                 alignItems="center"
-
+                mb={4}
             >
                 <Divider display={expanded ? "flex" : "none"} />
                 <Flex
@@ -57,22 +62,17 @@ const Sidebar = () => {
                         src="user.svg"
                     />
 
-                    <Fade
-                        in={expanded}
-                        unmountOnExit={true}
+                    <Flex
+                        flexDir="column"
+                        ml={4}
+                        m={4}
+                        display={expanded ? "flex" : "none"}
                     >
-                        <Flex
-                            flexDir="column"
-                            ml={4}
-                            m={4}
-                            display={expanded ? "flex" : "none"}
-                        >
-                            <Heading
-                                as="h3"
-                                size="sm"
-                            >Test</Heading>
-                        </Flex>
-                    </Fade>
+                        <Heading
+                            as="h3"
+                            size="sm"
+                        >Test</Heading>
+                    </Flex>
                 </Flex>
             </Flex>
 
