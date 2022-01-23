@@ -4,6 +4,7 @@ import Image from 'next/image';
 import money from '../public/money2.jpg'
 import TwoColumn from '../components/Layout/TwoColumn';
 import LoginForm from '../components/Forms/UserAccounts/login';
+import { useState } from 'react';
 
 const Index: NextPage = () => {
 

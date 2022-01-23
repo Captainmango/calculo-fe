@@ -6,12 +6,12 @@ import Sidebar from "../sidebar/Sidebar"
 const TwoColumn = () => {
     return (
         <Box display="flex">
-            <Box w="300px" h="100vh">
+            <Box w="15%" h="100vh">
                 <Sidebar />
             </Box>
-            <Box h="100vh">
-                <Container maxW="xl" centerContent>
-                  
+            <Box w="75%" h="100vh">
+                <Container pt="2%" maxW="xl" centerContent={true}>
+                    {Children}
                 </Container>
             </Box>
         </Box>

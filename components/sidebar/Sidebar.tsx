@@ -3,6 +3,7 @@ import { FiBarChart2, FiBookOpen, FiMenu, FiSettings } from 'react-icons/fi'
 import React, { useState } from 'react'
 import { SidebarItem } from './SidebarItem';
 import { UserStore } from '../../store/UserAuthStore';
+import Link from 'next/link';
 
 const Sidebar = () => {
 
@@ -44,7 +45,9 @@ const Sidebar = () => {
                         setExpanded(!expanded)
                     }}
                 />
-                <SidebarItem expanded={expanded} url="/expenses" title="Expenses" icon={FiBookOpen} active={false} description='View and add expenses' />
+                <Link href="/expenses" passHref>
+                    <SidebarItem expanded={expanded} url="/expenses" title="Expenses" icon={FiBookOpen} active={false} description='View and add expenses' />
+                </Link>
                 <SidebarItem expanded={expanded} url="/reports" title="Reports" icon={FiBarChart2} active={false} description='View reports on your expenses' />
 
             </Flex>
