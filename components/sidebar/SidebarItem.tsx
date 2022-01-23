@@ -1,4 +1,4 @@
-import { Flex, Icon, Menu, MenuButton, Text, Link, Tooltip } from '@chakra-ui/react'
+import { Flex, Icon, Menu, MenuButton, Text, Link, Tooltip, Center } from '@chakra-ui/react'
 import React from 'react'
 import { IconType } from 'react-icons'
 
@@ -29,7 +29,7 @@ export const SidebarItem = (props: sidebarItemProps) => {
                 alignItems={props.expanded ? "flex-start" : "center"}
             >
                 <Menu
-                    placement="right"
+                    placement="left"
                 >
                     <Link
                         href={props.url}
@@ -43,14 +43,15 @@ export const SidebarItem = (props: sidebarItemProps) => {
                     >
                         <MenuButton>
                             <Flex>
-                                <Icon as={props.icon} fontSize="xl" />
-                                <Text
-                                    display={props.expanded ? 'flex' : 'none'}
-                                    ml={5}
-                                >
-                                    {props.title}
-                                </Text>
-
+                                <Center>
+                                    <Icon as={props.icon} fontSize="xl" />
+                                    <Text
+                                        display={props.expanded ? 'flex' : 'none'}
+                                        ml={5}
+                                    >
+                                        {props.title}
+                                    </Text>
+                                </Center>
                             </Flex>
                         </MenuButton>
                     </Link>

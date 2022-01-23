@@ -1,8 +1,8 @@
 import { Avatar, Divider, Flex, Heading, IconButton } from '@chakra-ui/react'
-import { FiActivity, FiBarChart2, FiBookOpen, FiMenu, FiSettings } from 'react-icons/fi'
+import { FiBarChart2, FiBookOpen, FiMenu, FiSettings } from 'react-icons/fi'
 import React, { useState } from 'react'
 import { SidebarItem } from './SidebarItem';
-import { UserStore } from '../store/UserAuthStore';
+import { UserStore } from '../../store/UserAuthStore';
 
 const Sidebar = () => {
 
@@ -19,6 +19,7 @@ const Sidebar = () => {
             left="5"
             h="95vh"
             my="2.5vh"
+            bg="whiteAlpha.900"
             boxShadow="0 4px 12px 0 rgba(0, 0, 0, 0.05)"
             w={expanded ? "200px" : "75px"}
             flexDir="column"
