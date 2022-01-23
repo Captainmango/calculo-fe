@@ -11,7 +11,7 @@ const Index: NextPage = () => {
             </Box>
             <Box w="75%" h="100vh">
                 <Container pt="2%" maxW="xl" centerContent={true}>
-                    <Heading>Hello World</Heading>
+                    <Heading>Expenses</Heading>
                 </Container>
             </Box>
         </Box>

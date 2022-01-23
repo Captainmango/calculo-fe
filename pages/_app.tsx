@@ -9,6 +9,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <ChakraProvider>
       <Head>
         <title>Calculo</title>
+        <link rel="shortcut icon" href="favicon.svg" />
       </Head>
       <Component {...pageProps} />
     </ChakraProvider>
