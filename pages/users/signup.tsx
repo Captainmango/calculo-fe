@@ -1,11 +1,8 @@
-import { FormControl, FormHelperText, FormLabel, Input, Box, Button, Container } from '@chakra-ui/react'
-import Link from 'next/link'
-import React from 'react'
-import Image from 'next/image'
+import { Box, Button, FormControl, FormHelperText, FormLabel, Input, Link } from '@chakra-ui/react';
+import React from 'react';
 
-const LoginForm = () => (
-    <Container centerContent>
-        <Image src="/calculo_logo 1.svg" alt="Calculo icon" width="100" height="100" />
+const SignUp = () => {
+    return (
         <Box w="80%">
             <form>
                 <FormControl py="8">
@@ -18,7 +15,7 @@ const LoginForm = () => (
                     <Input variant="flushed" id='password' type='password' color="white" />
                 </FormControl>
                 <Box w="100%" pt="8" display="flex" justifyContent="space-evenly">
-                    <Link href="/users/signup" passHref>
+                    <Link href="/users/sign-up" passHref>
                         <Button colorScheme="whiteAlpha" variant="outline">
                             Sign up
                         </Button>
@@ -31,7 +28,7 @@ const LoginForm = () => (
                 </Box>
             </form>
         </Box>
-    </Container>
-)
+    )
+};
 
-export default LoginForm
+export default SignUp;
