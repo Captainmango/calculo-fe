@@ -11,7 +11,6 @@ const LoginForm = () => (
                 <FormControl py="8">
                     <FormLabel htmlFor='email' color="white">Email address</FormLabel>
                     <Input variant="flushed" id='email' type='email' color="white" />
-                    <FormHelperText color="white">Your email will never be shared</FormHelperText>
                 </FormControl>
                 <FormControl>
                     <FormLabel htmlFor='password' color="white">Password</FormLabel>
