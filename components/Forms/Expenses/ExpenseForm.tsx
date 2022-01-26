@@ -9,7 +9,7 @@ const ExpenseForm = () => {
     const format = (val: string) => `£` + val
     const parse = (val: string) => val.replace(/^\$/, '')
 
-    const [value, setValue] = useState('0.00')
+    const [total, setTotal] = useState('0.00')
 
     return (
         <Container p="8" centerContent>
@@ -24,8 +24,8 @@ const ExpenseForm = () => {
                         <FormControl>
                             <FormLabel htmlFor='total' color="black">Total</FormLabel>
                             <NumberInput
-                                onChange={(valueString) => setValue(parse(valueString))}
-                                value={format(value)}
+                                onChange={(valueString) => setTotal(parse(valueString))}
+                                value={format(total)}
                                 precision={2}
                                 pattern='^((?=.*[1-9]|0)(?:\d{1,3}))((?=.*\d)(?:\.\d{3})?)*((?=.*\d)(?:\,\d\d){1}?){0,1}$'
                                 name='total'
