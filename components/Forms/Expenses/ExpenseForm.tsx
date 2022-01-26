@@ -1,4 +1,4 @@
-import { Container, Box, HStack, FormControl, FormLabel, Input, FormHelperText, Button, NumberInput, NumberInputField, Select, Textarea } from '@chakra-ui/react';
+import { Container, Box, HStack, FormControl, FormLabel, Input, Center, FormHelperText, Button, NumberInput, NumberInputField, Select, Textarea, ButtonGroup } from '@chakra-ui/react';
 import Link from 'next/link';
 import React, { useState } from 'react';
 import Image from 'next/image'
@@ -26,6 +26,10 @@ const ExpenseForm = () => {
                             <NumberInput
                                 onChange={(valueString) => setValue(parse(valueString))}
                                 value={format(value)}
+                                precision={2}
+                                pattern='^((?=.*[1-9]|0)(?:\d{1,3}))((?=.*\d)(?:\.\d{3})?)*((?=.*\d)(?:\,\d\d){1}?){0,1}$'
+                                name='total'
+                                id='total'
                             >
                                 <NumberInputField />
                             </NumberInput>
@@ -45,8 +49,28 @@ const ExpenseForm = () => {
                             size="md"
                             rows={10}
                             resize="none"
+                            name='notes'
+                            id='notes'
                         />
                     </FormControl>
+                    <Center>
+                    <ButtonGroup
+                        spacing={5}
+                        justifyContent='center'
+                    >
+                            <Button
+                                variant="outline"
+                            >
+                                Cancel
+                            </Button>
+                            <Button
+                                colorScheme="whatsapp"
+                            >
+                                Submit
+                            </Button>
+                        
+                    </ButtonGroup>
+                    </Center>
                 </form>
             </Box>
         </Container>
