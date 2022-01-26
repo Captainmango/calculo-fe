@@ -3,7 +3,8 @@ import { NextPage } from "next"
 import { Children } from "react"
 import Sidebar from "../sidebar/Sidebar"
 
-const TwoColumn = () => {
+//@ts-ignore
+const TwoColumn = ({children}) => {
     return (
         <Box display="flex">
             <Box w="15%" h="100vh">
@@ -11,7 +12,7 @@ const TwoColumn = () => {
             </Box>
             <Box w="75%" h="100vh">
                 <Container pt="2%" maxW="xl" centerContent={true}>
-                    {Children}
+                    {children}
                 </Container>
             </Box>
         </Box>
