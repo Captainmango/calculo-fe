@@ -16,7 +16,7 @@ const Sidebar = () => {
 
     return (
         <Flex
-            pos="sticky"
+            pos="fixed"
             left="5"
             h="95vh"
             my="2.5vh"
