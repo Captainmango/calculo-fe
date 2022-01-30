@@ -73,13 +73,13 @@ const ExpenseDataTable = () => {
             <Box id='myGrid' style={{height: '100%', width:'100%'}}>
                 <AgGridReact
                     rowData={expenses}>
-                    <AgGridColumn field="id" sortable={true}></AgGridColumn>
-                    <AgGridColumn field="title" sortable={true} filter="agTextColumnFilter" filterParams={fieldFilterParams}></AgGridColumn>
-                    <AgGridColumn field="category" sortable={true} filterParams={fieldFilterParams}></AgGridColumn>
-                    <AgGridColumn field="createdAt" sortable={true} filter="agDateColumnFilter" filterParams={dateFilterParams}></AgGridColumn>
-                    <AgGridColumn field="total" sortable={true} filter="agNumberColumnFilter" filterParams={totalFilterParams}></AgGridColumn>
-                    <AgGridColumn field="notes" sortable={true} filter="agTextColumnFilter" filterParams={fieldFilterParams}></AgGridColumn>
-                    <AgGridColumn field="updatedAt" sortable={true} filter="agDateColumnFilter" filterParams={dateFilterParams}></AgGridColumn>
+                    <AgGridColumn field="id" resizable={true} editable={true} sortable={true}></AgGridColumn>
+                    <AgGridColumn field="title" resizable={true} sortable={true} filter="agTextColumnFilter" filterParams={fieldFilterParams}></AgGridColumn>
+                    <AgGridColumn field="categories" resizable={true} sortable={true} filter="agTextColumnFilter" filterParams={fieldFilterParams}></AgGridColumn>
+                    <AgGridColumn field="createdAt" resizable={true} sortable={true} filter="agDateColumnFilter" filterParams={dateFilterParams}></AgGridColumn>
+                    <AgGridColumn field="total" resizable={true} sortable={true} filter="agNumberColumnFilter" filterParams={totalFilterParams}></AgGridColumn>
+                    <AgGridColumn field="notes" resizable={true} sortable={true} filter="agTextColumnFilter" filterParams={fieldFilterParams}></AgGridColumn>
+                    <AgGridColumn field="updatedAt" resizable={true} sortable={true} filter="agDateColumnFilter" filterParams={dateFilterParams}></AgGridColumn>
                 </AgGridReact>
             </Box>
         </Box>

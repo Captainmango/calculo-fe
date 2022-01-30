@@ -1,0 +1,101 @@
+[
+	{
+		"title": "Cranberry",
+		"notes": "When the snows fall and the white winds blow, the lone wolf dies but the pack survives.",
+		"total": 10.7,
+		"categories": ["CATEGORY_BUSINESS", "CATEGORY_PERSONAL"],
+		"createdAt": "2022-01-30T12:18:24.017786Z",
+		"updatedAt": "2022-01-30T12:18:24.017805Z",
+		"id": 2
+	},
+	{
+		"title": "Banana",
+		"notes": "All dwarfs are bastards in their father's eyes",
+		"total": 5.01,
+		"categories": ["CATEGORY_BUSINESS"],
+		"createdAt": "2022-01-30T12:18:24.026332Z",
+		"updatedAt": "2022-01-30T12:18:24.026351Z",
+		"id": 3
+	},
+	{
+		"title": "Passionfruit",
+		"notes": "All dwarfs are bastards in their father's eyes",
+		"total": 8.42,
+		"categories": ["CATEGORY_BUSINESS"],
+		"createdAt": "2022-01-30T12:18:24.033668Z",
+		"updatedAt": "2022-01-30T12:18:24.033687Z",
+		"id": 4
+	},
+	{
+		"title": "Currants",
+		"notes": "Every flight begins with a fall.",
+		"total": 12.26,
+		"categories": ["CATEGORY_BUSINESS", "CATEGORY_PERSONAL"],
+		"createdAt": "2022-01-30T12:18:24.040672Z",
+		"updatedAt": "2022-01-30T12:18:24.040691Z",
+		"id": 5
+	},
+	{
+		"title": "Longan",
+		"notes": "Every flight begins with a fall.",
+		"total": 11.11,
+		"categories": ["CATEGORY_BUSINESS"],
+		"createdAt": "2022-01-30T12:18:24.047324Z",
+		"updatedAt": "2022-01-30T12:18:24.047340Z",
+		"id": 6
+	},
+	{
+		"title": "Dragonfruit",
+		"notes": "Summer will end soon enough, and childhood as well.",
+		"total": 10.91,
+		"categories": ["CATEGORY_PERSONAL"],
+		"createdAt": "2022-01-30T12:18:24.055603Z",
+		"updatedAt": "2022-01-30T12:18:24.055620Z",
+		"id": 7
+	},
+	{
+		"title": "Mandarins",
+		"notes": "... a mind needs books as a sword needs a whetstone, if it is to keep its edge.",
+		"total": 8.9,
+		"categories": ["CATEGORY_PERSONAL"],
+		"createdAt": "2022-01-30T12:18:24.061921Z",
+		"updatedAt": "2022-01-30T12:18:24.061940Z",
+		"id": 8
+	},
+	{
+		"title": "Mangosteens",
+		"notes": "And so he spoke, and so he spoke, that Lord of Castamere, but now the rains weep o'er his hall, with no one there to hear. Yes, now the rains weep o'er his hall, and not a soul to hear.",
+		"total": 9.04,
+		"categories": ["CATEGORY_PERSONAL", "CATEGORY_BUSINESS"],
+		"createdAt": "2022-01-30T12:18:24.068821Z",
+		"updatedAt": "2022-01-30T12:18:24.068837Z",
+		"id": 9
+	},
+	{
+		"title": "Custard Apples",
+		"notes": "Give me honorable enemies rather than ambitious ones, and I'll sleep more easily by night.",
+		"total": 8.65,
+		"categories": ["CATEGORY_PERSONAL"],
+		"createdAt": "2022-01-30T12:18:24.074657Z",
+		"updatedAt": "2022-01-30T12:18:24.074671Z",
+		"id": 10
+	},
+	{
+		"title": "Strawberries",
+		"notes": "Fear cuts deeper than swords.",
+		"total": 7.57,
+		"categories": ["CATEGORY_PERSONAL"],
+		"createdAt": "2022-01-30T12:18:24.080778Z",
+		"updatedAt": "2022-01-30T12:18:24.080797Z",
+		"id": 11
+	},
+	{
+		"title": "Grapefruit",
+		"notes": "Nothing burns like the cold.",
+		"total": 10.96,
+		"categories": ["CATEGORY_PERSONAL", "CATEGORY_BUSINESS"],
+		"createdAt": "2022-01-30T12:18:24.086885Z",
+		"updatedAt": "2022-01-30T12:18:24.086903Z",
+		"id": 12
+	}
+]

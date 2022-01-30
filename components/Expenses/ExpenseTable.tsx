@@ -3,6 +3,7 @@ import expenses from '../../resources/Calculo_expenses.json'
 import React, { useEffect, useState } from 'react';
 import { FiTrash2 } from 'react-icons/fi';
 import dayjs from 'dayjs';
+import { CategoryEnum } from '../../models/Category';
 
 const ExpenseTable = () => {
 
@@ -22,7 +23,11 @@ const ExpenseTable = () => {
           return (
             <Tr key={expense.id}>
               <Td>{expense.title}</Td>
-              <Td>{expense.categories}</Td>
+              <Td>
+                {expense.categories.map(category => (
+                //@ts-ignore
+                CategoryEnum[category]
+              )).join(', ')}</Td>
               <Td>{dayjs(expense.createdAt).format('DD/MM/YYYY HH:mm')}</Td>
               <Td>{
                 new Intl.NumberFormat('en-GB', {
