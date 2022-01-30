@@ -2,7 +2,7 @@ import { Container, Box, HStack, FormControl, FormLabel, Input, Center, FormHelp
 import Link from 'next/link';
 import React, { useState } from 'react';
 import Image from 'next/image'
-import MultiSelectMenu from '../../shared/multiselect-menu';
+import MultiSelectMenu from '../../Shared/multiselect-menu';
 
 const ExpenseForm = () => {
 

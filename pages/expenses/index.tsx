@@ -1,15 +1,18 @@
-import { Box, Container, Heading } from '@chakra-ui/react'
+import { Box, Container, Heading, Center } from '@chakra-ui/react'
 import { NextPage } from 'next'
 import React from 'react'
-import ExpenseForm from '../../components/Forms/Expenses/ExpenseForm'
+import ExpenseTable from '../../components/Expenses/ExpenseTable'
 import TwoColumn from '../../components/Layout/TwoColumn'
-import Sidebar from '../../components/sidebar/Sidebar'
+import * as expenses from '../../resources/Calculo_expenses.json'
+
 
 const Index: NextPage = () => {
     return (
         <TwoColumn>
-            <Heading>Expenses</Heading>
-            <ExpenseForm />
+            <Center>
+                <Heading m="8">Expenses</Heading>
+            </Center>
+            <ExpenseTable />
         </TwoColumn>
     )
 }
