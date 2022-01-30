@@ -2,7 +2,7 @@ import { Avatar, Divider, Flex, Heading, IconButton } from '@chakra-ui/react'
 import { FiBarChart2, FiBookOpen, FiMenu, FiSettings } from 'react-icons/fi'
 import React, { useState } from 'react'
 import { SidebarItem } from './SidebarItem';
-import { UserStore } from '../../store/UserAuthStore';
+import { UserStore } from '../../../store/UserAuthStore';
 
 const Sidebar = () => {
 
@@ -25,6 +25,7 @@ const Sidebar = () => {
             flexDir="column"
             justifyContent="space-between"
             borderRadius={expanded ? "30px" : "15px"}
+            zIndex="200"
             sx={{ transition: "all 0.125s ease" }}
         >
             <Flex
