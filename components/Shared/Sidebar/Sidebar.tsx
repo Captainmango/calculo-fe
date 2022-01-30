@@ -20,7 +20,7 @@ const Sidebar = () => {
             h="95vh"
             my="2.5vh"
             bg="whiteAlpha.900"
-            boxShadow="0 4px 12px 0 rgba(0, 0, 0, 0.05)"
+            boxShadow="2px 2px 16px 2px rgba(0, 0, 0, 0.05)"
             w={expanded ? "200px" : "75px"}
             flexDir="column"
             justifyContent="space-between"
