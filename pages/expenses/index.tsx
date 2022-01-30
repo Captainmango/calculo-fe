@@ -1,4 +1,4 @@
-import { Box, Container, Heading, Center, FormControl, FormLabel, Switch, Fade } from '@chakra-ui/react'
+import { Box, Container, Heading, Center, FormControl, FormLabel, Switch, SlideFade } from '@chakra-ui/react'
 import { NextPage } from 'next'
 import React, { useEffect, useState } from 'react'
 import ExpenseDataTable from '../../components/Expenses/ExpenseDataTable'
@@ -21,18 +21,19 @@ const Index: NextPage = () => {
                 </FormLabel>
                 <Switch id='data-mode' onChange={() => console.log(toggleDataMode(!dataMode))} />
             </FormControl>
-            <Fade 
+            <SlideFade 
                 in={dataMode}
                 unmountOnExit
+                
             >
                 {dataMode && <ExpenseDataTable />}
-            </Fade>
-            <Fade 
+            </SlideFade>
+            <SlideFade 
                 in={!dataMode}
                 unmountOnExit
             >
                 {!dataMode && <ExpenseTable />}
-            </Fade>
+            </SlideFade>
         </TwoColumn>
     )
 }
