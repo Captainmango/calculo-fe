@@ -3,7 +3,6 @@ import { FiBarChart2, FiBookOpen, FiMenu, FiSettings } from 'react-icons/fi'
 import React, { useState } from 'react'
 import { SidebarItem } from './SidebarItem';
 import { UserStore } from '../../store/UserAuthStore';
-import Link from 'next/link';
 
 const Sidebar = () => {
 
