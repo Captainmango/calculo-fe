@@ -12,9 +12,6 @@ type sidebarItemProps = {
 }
 
 export const SidebarItem = (props: sidebarItemProps) => {
-
-
-
     return (
         <Tooltip
             label={props.description}

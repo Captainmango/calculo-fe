@@ -45,9 +45,8 @@ const Sidebar = () => {
                         setExpanded(!expanded)
                     }}
                 />
-                <Link href="/expenses" passHref>
-                    <SidebarItem expanded={expanded} url="/expenses" title="Expenses" icon={FiBookOpen} active={false} description='View and add expenses' />
-                </Link>
+                <SidebarItem expanded={expanded} url="/expenses" title="Expenses" icon={FiBookOpen} active={false} description='View and add expenses' />
+
                 <SidebarItem expanded={expanded} url="/reports" title="Reports" icon={FiBarChart2} active={false} description='View reports on your expenses' />
 
             </Flex>
@@ -59,7 +58,9 @@ const Sidebar = () => {
                 alignItems="center"
                 mb={4}
             >
+
                 <SidebarItem expanded={expanded} url="/settings" title="Settings" icon={FiSettings} active={false} description='Edit user settings' />
+
                 <Divider display={expanded ? "flex" : "none"} />
                 <Flex
                     mt={4}

@@ -1,4 +1,4 @@
-import { Box, Center } from "@chakra-ui/react"
+import { Box, Container } from "@chakra-ui/react"
 import Sidebar from "../sidebar/Sidebar"
 
 //@ts-ignore
