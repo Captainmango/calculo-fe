@@ -8,7 +8,7 @@ import { CategoryEnum } from '../../models/Category';
 const ExpenseTable = () => {
 
   return (
-    <Table colorScheme="blue" mt="8">
+    <Table colorScheme="blue" mt="8" size="sm">
       <Thead>
         <Tr>
           <Th>Title</Th>
@@ -38,7 +38,7 @@ const ExpenseTable = () => {
               </Td>
               <Td>
                 <Button bg="whiteAlpha.400">
-                  <Icon as={FiTrash2} fontSize="3xl" />
+                  <Icon as={FiTrash2} fontSize="xl" />
                 </Button>
               </Td>
             </Tr>
