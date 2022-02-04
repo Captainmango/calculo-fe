@@ -1,6 +1,7 @@
 import { Flex, Icon, Menu, MenuButton, Text, Link, Tooltip, Center } from '@chakra-ui/react'
 import React from 'react'
 import { IconType } from 'react-icons'
+import NextLink from 'next/link'
 
 type sidebarItemProps = {
     expanded: boolean
@@ -28,30 +29,31 @@ export const SidebarItem = (props: sidebarItemProps) => {
                 <Menu
                     placement="left"
                 >
-                    <Link
-                        href={props.url}
-                        //@ts-ignore
-                        backgroundColor={props.active && "blue.100"}
-                        borderRadius={"8px"}
-                        p={3}
-                        _hover={{ textDecor: 'none', backgroundColor: "blue.100" }}
-                        //@ts-ignore
-                        w={props.expanded && "100%"}
-                    >
-                        <MenuButton>
-                            <Flex>
-                                <Center>
-                                    <Icon as={props.icon} fontSize="xl" />
-                                    <Text
-                                        display={props.expanded ? 'flex' : 'none'}
-                                        ml={5}
-                                    >
-                                        {props.title}
-                                    </Text>
-                                </Center>
-                            </Flex>
-                        </MenuButton>
-                    </Link>
+                    <NextLink href={props.url} passHref>
+                        <Link
+                            //@ts-ignore
+                            backgroundColor={props.active && "blue.100"}
+                            borderRadius={"8px"}
+                            p={3}
+                            _hover={{ textDecor: 'none', backgroundColor: "blue.100" }}
+                            //@ts-ignore
+                            w={props.expanded && "100%"}
+                        >
+                            <MenuButton>
+                                <Flex>
+                                    <Center>
+                                        <Icon as={props.icon} fontSize="xl" />
+                                        <Text
+                                            display={props.expanded ? 'flex' : 'none'}
+                                            ml={5}
+                                        >
+                                            {props.title}
+                                        </Text>
+                                    </Center>
+                                </Flex>
+                            </MenuButton>
+                        </Link>
+                    </NextLink>
                 </Menu>
             </Flex >
         </Tooltip>
