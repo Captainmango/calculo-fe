@@ -5,6 +5,7 @@ import { FiTrash2 } from 'react-icons/fi';
 import dayjs from 'dayjs';
 import { CategoryEnum } from '../../models/Category';
 import Link from 'next/link';
+import DeleteExpenseModalComponent from '../modals/DeleteExpenseModal';
 
 const ExpenseTable = () => {
 
@@ -42,9 +43,7 @@ const ExpenseTable = () => {
                 }).format(expense.total)}
               </Td>
               <Td>
-                <Button bg="whiteAlpha.400">
-                  <Icon as={FiTrash2} fontSize="xl" />
-                </Button>
+                  <DeleteExpenseModalComponent />
               </Td>
             </Tr>
           )

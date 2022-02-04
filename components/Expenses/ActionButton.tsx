@@ -1,7 +1,8 @@
-import { Box, Button, Icon, Menu, MenuButton, MenuItem, MenuList, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, useDisclosure } from '@chakra-ui/react';
+import { Box, Button, Icon, Menu, MenuButton, MenuList, useDisclosure } from '@chakra-ui/react';
 import React from 'react';
 import { FiEdit2 } from 'react-icons/fi';
-import ExpenseForm from '../Forms/Expenses/ExpenseForm';
+import CreateExpenseModalComponent from '../modals/CreateExpenseModal';
+import DeleteExpenseModalComponent from '../modals/DeleteExpenseModal';
 
 const ActionButton = () => {
     const { isOpen, onOpen, onClose } = useDisclosure()
@@ -12,19 +13,9 @@ const ActionButton = () => {
                     <Icon as={FiEdit2} fontSize="4xl" color="gray.300" />
                 </MenuButton>
                 <MenuList>
-                    <MenuItem onClick={onOpen}>Create an expense</MenuItem>
+                    <CreateExpenseModalComponent />
                 </MenuList>
             </Menu>
-            <Modal isOpen={isOpen} onClose={onClose}>
-                <ModalOverlay />
-                <ModalContent>
-                    <ModalHeader>Create an expense</ModalHeader>
-                    <ModalCloseButton />
-                    <ModalBody>
-                        <ExpenseForm />
-                    </ModalBody>
-                </ModalContent>
-            </Modal>
         </Box>
     )
 };
