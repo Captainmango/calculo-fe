@@ -9,7 +9,7 @@ const CreateExpenseModalComponent = () => {
 
     const onClickHandler = () => {
         onClose()
-        toast.success('Toast created')
+        toast.success('Expense created')
     }
 
     return (<>
