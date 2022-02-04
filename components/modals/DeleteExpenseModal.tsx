@@ -1,10 +1,16 @@
 import { Button, Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, useDisclosure, Icon, ModalFooter, ButtonGroup } from '@chakra-ui/react';
 import React from 'react';
 import { FiTrash2 } from 'react-icons/fi';
+import { toast } from 'react-toastify'
 
 const DeleteExpenseModalComponent = () => {
 
     const { isOpen, onOpen, onClose } = useDisclosure()
+
+    const onClickHandler = () => {
+        onClose()
+        toast.success('Expense deleted')
+    }
 
     return (<>
         <Button onClick={onOpen} bg="whiteAlpha.400">
@@ -20,10 +26,10 @@ const DeleteExpenseModalComponent = () => {
                 </ModalBody>
                 <ModalFooter>
                     <ButtonGroup>
-                        <Button>
+                        <Button onClick={() => onClose()}>
                             Cancel
                         </Button>
-                        <Button colorScheme="red">
+                        <Button onClick={() => onClickHandler()} colorScheme="red">
                             Yes
                         </Button>
                     </ButtonGroup>

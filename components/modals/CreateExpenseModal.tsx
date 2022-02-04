@@ -1,10 +1,16 @@
 import { MenuItem, Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, useDisclosure } from '@chakra-ui/react';
 import React from 'react';
-import ExpenseForm from '../Forms/Expenses/ExpenseForm';
+import ExpenseForm from '../Forms/Expenses/ExpenseForm'
+import { toast } from 'react-toastify'
 
 const CreateExpenseModalComponent = () => {
 
     const { isOpen, onOpen, onClose } = useDisclosure()
+
+    const onClickHandler = () => {
+        onClose()
+        toast.success('Toast created')
+    }
 
     return (<>
         <MenuItem onClick={onOpen}>Create an expense</MenuItem>
@@ -14,7 +20,7 @@ const CreateExpenseModalComponent = () => {
                 <ModalHeader>Create an expense</ModalHeader>
                 <ModalCloseButton />
                 <ModalBody>
-                    <ExpenseForm />
+                    <ExpenseForm onClickHandler={onClickHandler} />
                 </ModalBody>
             </ModalContent>
         </Modal>

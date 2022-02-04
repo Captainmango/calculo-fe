@@ -4,7 +4,10 @@ import React, { useState } from 'react';
 import Image from 'next/image'
 import MultiSelectMenu from '../../Shared/multiselect-menu';
 
-const ExpenseForm = () => {
+interface ExpenseFormProps {
+    onClickHandler: () => void
+}
+const ExpenseForm = (props: ExpenseFormProps) => {
 
     const format = (val: string) => `£` + val
     const parse = (val: string) => val.replace(/^\$/, '')
@@ -63,7 +66,7 @@ const ExpenseForm = () => {
                             >
                                 Cancel
                             </Button>
-                            <Button
+                            <Button onClick={() => props.onClickHandler()}
                                 colorScheme="whatsapp"
                             >
                                 Submit
