@@ -15,7 +15,7 @@ const Index: NextPage = () => {
             <Divider my="8" />
             <Text mb="8" fontSize="xl" color="white">Your suite of personal budgeting tools to help you manage your finances.</Text>
             <Center>
-              <ButtonGroup>
+              <ButtonGroup spacing="20">
                 <Link href="/users/signup" passHref>
                   <Button colorScheme="telegram">
                     Sign Up
