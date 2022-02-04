@@ -1,4 +1,4 @@
-import { Button } from '@chakra-ui/react';
+import { Button, ButtonGroup, Center, Container, Divider, Flex, Heading, Text } from '@chakra-ui/react';
 import type { NextPage } from 'next'
 import Link from 'next/link';
 import LoginForm from '../components/Forms/UserAccounts/login';
@@ -9,11 +9,27 @@ const Index: NextPage = () => {
   return (
     <>
       <LandingPage>
-        <Link href="/users/login" passHref>
-          <Button>
-            Press me
-          </Button>
-        </Link>
+        <Container>
+          <Flex direction="column">
+            <Heading fontSize="5xl" color="white">Welcome to Calculo</Heading>
+            <Divider my="8" />
+            <Text mb="8" fontSize="xl" color="white">Your suite of personal budgeting tools to help you manage your finances.</Text>
+            <Center>
+              <ButtonGroup>
+                <Link href="/users/signup" passHref>
+                  <Button colorScheme="telegram">
+                    Sign Up
+                  </Button>
+                </Link>
+                <Link href="/users/login" passHref>
+                  <Button colorScheme="whatsapp">
+                    Log In
+                  </Button>
+                </Link>
+              </ButtonGroup>
+            </Center>
+          </Flex>
+        </Container>
       </LandingPage>
     </>
   )

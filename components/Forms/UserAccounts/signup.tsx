@@ -29,14 +29,14 @@ const SignUpForm = () => {
                         <Input variant="flushed" id='password' type='password' color="white" />
                     </FormControl>
                     <Box w="100%" pt="8" display="flex" justifyContent="space-evenly">
-                        <Link href="/users/login" passHref>
+                        <Link href="/" passHref>
                             <Button colorScheme="whiteAlpha" variant="outline">
-                                Log in
+                                Go back
                             </Button>
                         </Link>
 
                         <Button colorScheme="whatsapp">
-                            Log in
+                            Sign up
                         </Button>
 
                     </Box>
