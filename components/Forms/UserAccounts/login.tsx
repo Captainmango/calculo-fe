@@ -1,4 +1,4 @@
-import { FormControl, FormHelperText, FormLabel, Input, Box, Button, Container } from '@chakra-ui/react'
+import { FormControl, FormHelperText, FormLabel, Input, Box, Button, Container, ButtonGroup, Center } from '@chakra-ui/react'
 import Link from 'next/link'
 import React from 'react'
 import Image from 'next/image'
@@ -12,22 +12,22 @@ const LoginForm = () => (
                     <FormLabel htmlFor='email' color="white">Email address</FormLabel>
                     <Input variant="flushed" id='email' type='email' color="white" />
                 </FormControl>
-                <FormControl>
+                <FormControl pb="8">
                     <FormLabel htmlFor='password' color="white">Password</FormLabel>
                     <Input variant="flushed" id='password' type='password' color="white" />
                 </FormControl>
-                <Box w="100%" pt="8" display="flex" justifyContent="space-evenly">
-                    <Link href="/users/signup" passHref>
-                        <Button colorScheme="whiteAlpha" variant="outline">
-                            Sign up
+                <Center>
+                    <ButtonGroup spacing="8" py="8">
+                        <Link href="/users/signup" passHref>
+                            <Button colorScheme="whiteAlpha" variant="outline">
+                                Sign up
+                            </Button>
+                        </Link>
+                        <Button colorScheme="whatsapp">
+                            Log in
                         </Button>
-                    </Link>
-                    
-                    <Button colorScheme="whatsapp">
-                        Log in
-                    </Button>
-
-                </Box>
+                    </ButtonGroup>
+                </Center>
             </form>
         </Box>
     </Container>

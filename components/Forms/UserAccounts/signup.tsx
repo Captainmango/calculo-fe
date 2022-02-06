@@ -1,4 +1,4 @@
-import { Container, Box, FormControl, FormLabel, Input, FormHelperText, Button, HStack } from '@chakra-ui/react';
+import { Container, Box, FormControl, FormLabel, Input, FormHelperText, Button, HStack, ButtonGroup, Center } from '@chakra-ui/react';
 import Image from 'next/image'
 import Link from 'next/link';
 import React from 'react';
@@ -9,7 +9,7 @@ const SignUpForm = () => {
             <Image src="/calculo_logo 1.svg" alt="Calculo icon" width="100" height="100" />
             <Box w="80%">
                 <form>
-                    <HStack>
+                    <HStack spacing="8">
                         <FormControl py="8">
                             <FormLabel htmlFor='firstName' color="white">First Name</FormLabel>
                             <Input variant="flushed" id='firstName' type='firstName' color="white" />
@@ -28,18 +28,19 @@ const SignUpForm = () => {
                         <FormLabel htmlFor='password' color="white">Password</FormLabel>
                         <Input variant="flushed" id='password' type='password' color="white" />
                     </FormControl>
-                    <Box w="100%" pt="8" display="flex" justifyContent="space-evenly">
-                        <Link href="/" passHref>
-                            <Button colorScheme="whiteAlpha" variant="outline">
-                                Go back
+                    <Center>
+                        <ButtonGroup spacing="8" py="8">
+                            <Link href="/" passHref>
+                                <Button colorScheme="whiteAlpha" variant="outline">
+                                    Go back
+                                </Button>
+                            </Link>
+
+                            <Button colorScheme="whatsapp">
+                                Sign up
                             </Button>
-                        </Link>
-
-                        <Button colorScheme="whatsapp">
-                            Sign up
-                        </Button>
-
-                    </Box>
+                        </ButtonGroup>
+                    </Center>
                 </form>
             </Box>
         </Container>
