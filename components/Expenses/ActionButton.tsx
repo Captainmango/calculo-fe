@@ -15,7 +15,8 @@ const ActionButton = () => {
                     borderRadius="50" 
                     bgColor="blue.400" 
                     _hover={{ bgColor: "blue.500" }}
-                    boxShadow="2px 2px 16px 2px rgba(0, 0, 0, 0.05)" 
+                    boxShadow="2px 2px 26px 2px rgba(0, 0, 0, 0.15)"
+                    zIndex="200"
                 >
                     <Icon as={FiEdit2} fontSize="4xl" color="gray.300" />
                 </MenuButton>

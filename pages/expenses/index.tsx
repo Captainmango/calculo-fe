@@ -11,6 +11,14 @@ const Index: NextPage = () => {
 
     const [dataMode, toggleDataMode] = useState(false)
 
+    useLayoutEffect(() => {
+      first;
+      return () => {
+        second;
+      };
+    }, [third]);
+    
+
     return (
         <TwoColumn>
             <Center>
