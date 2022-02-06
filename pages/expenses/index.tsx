@@ -1,4 +1,4 @@
-import { Box, Container, Heading, Center, FormControl, FormLabel, Switch, SlideFade } from '@chakra-ui/react'
+import { Box, Container, Heading, Center, FormControl, FormLabel, Switch, SlideFade, HStack } from '@chakra-ui/react'
 import { NextPage } from 'next'
 import React, { useEffect, useState } from 'react'
 import ActionButton from '../../components/Expenses/ActionButton'
@@ -11,38 +11,21 @@ const Index: NextPage = () => {
 
     const [dataMode, toggleDataMode] = useState(false)
 
-    useLayoutEffect(() => {
-      first;
-      return () => {
-        second;
-      };
-    }, [third]);
-    
-
     return (
         <TwoColumn>
             <Center>
                 <Heading m="8">Expenses</Heading>
             </Center>
-            <FormControl display='flex' alignItems='center'>
-                <FormLabel htmlFor='data-mode' mb='0'>
-                    Data mode {dataMode ? 'ON' : 'OFF'}
-                </FormLabel>
-                <Switch id='data-mode' onChange={() => toggleDataMode(!dataMode)} />
-            </FormControl>
-            <SlideFade 
-                in={dataMode}
-                unmountOnExit
-                
-            >
-                {dataMode && <ExpenseDataTable />}
-            </SlideFade>
-            <SlideFade 
-                in={!dataMode}
-                unmountOnExit
-            >
-                {!dataMode && <ExpenseTable />}
-            </SlideFade>
+            <HStack py="8">
+                <FormControl display='flex' alignItems='center'>
+                    <FormLabel htmlFor='data-mode' mb='0'>
+                        Data mode {dataMode ? 'ON' : 'OFF'}
+                    </FormLabel>
+                    <Switch id='data-mode' onChange={() => toggleDataMode(!dataMode)} />
+                </FormControl>
+            </HStack>
+            {dataMode && <ExpenseDataTable />}
+            {!dataMode && <ExpenseTable />}
             <ActionButton />
         </TwoColumn>
     )

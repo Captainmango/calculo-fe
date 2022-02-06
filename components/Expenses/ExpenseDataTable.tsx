@@ -1,9 +1,9 @@
 import React from 'react';
 import 'ag-grid-community/dist/styles/ag-grid.css'
-import 'ag-grid-community/dist/styles/ag-theme-material.css'
+import 'ag-grid-community/dist/styles/ag-theme-alpine.css'
 import expenses from '../../resources/Calculo_expenses.json'
 import { AgGridColumn, AgGridReact } from 'ag-grid-react';
-import { Box } from '@chakra-ui/react';
+import { Box, SlideFade } from '@chakra-ui/react';
 import dayjs from 'dayjs';
 
 const ExpenseDataTable = () => {
@@ -68,21 +68,26 @@ const ExpenseDataTable = () => {
     };
 
     return (
+        <SlideFade
+            in={true}
+            unmountOnExit
 
-        <Box className="ag-theme-material" style={{ height: "70vh", width: "73vw" }}>
-            <Box id='myGrid' style={{height: '100%', width:'100%'}}>
-                <AgGridReact
-                    rowData={expenses}>
-                    <AgGridColumn field="id" resizable={true} editable={true} sortable={true}></AgGridColumn>
-                    <AgGridColumn field="title" resizable={true} sortable={true} filter="agTextColumnFilter" filterParams={fieldFilterParams}></AgGridColumn>
-                    <AgGridColumn field="categories" resizable={true} sortable={true} filter="agTextColumnFilter" filterParams={fieldFilterParams}></AgGridColumn>
-                    <AgGridColumn field="createdAt" resizable={true} sortable={true} filter="agDateColumnFilter" filterParams={dateFilterParams}></AgGridColumn>
-                    <AgGridColumn field="total" resizable={true} sortable={true} filter="agNumberColumnFilter" filterParams={totalFilterParams}></AgGridColumn>
-                    <AgGridColumn field="notes" resizable={true} sortable={true} filter="agTextColumnFilter" filterParams={fieldFilterParams}></AgGridColumn>
-                    <AgGridColumn field="updatedAt" resizable={true} sortable={true} filter="agDateColumnFilter" filterParams={dateFilterParams}></AgGridColumn>
-                </AgGridReact>
+        >
+            <Box className="ag-theme-alpine" style={{ height: "70vh", width: "73.05vw" }}>
+                <Box id='myGrid' style={{ height: '100%', width: '100%' }}>
+                    <AgGridReact
+                        rowData={expenses}>
+                        <AgGridColumn field="id" resizable={true} editable={true} sortable={true}></AgGridColumn>
+                        <AgGridColumn field="title" resizable={true} sortable={true} filter="agTextColumnFilter" filterParams={fieldFilterParams}></AgGridColumn>
+                        <AgGridColumn field="categories" resizable={true} sortable={true} filter="agTextColumnFilter" filterParams={fieldFilterParams}></AgGridColumn>
+                        <AgGridColumn field="createdAt" resizable={true} sortable={true} filter="agDateColumnFilter" filterParams={dateFilterParams}></AgGridColumn>
+                        <AgGridColumn field="total" resizable={true} sortable={true} filter="agNumberColumnFilter" filterParams={totalFilterParams}></AgGridColumn>
+                        <AgGridColumn field="notes" resizable={true} sortable={true} filter="agTextColumnFilter" filterParams={fieldFilterParams}></AgGridColumn>
+                        <AgGridColumn field="updatedAt" resizable={true} sortable={true} filter="agDateColumnFilter" filterParams={dateFilterParams}></AgGridColumn>
+                    </AgGridReact>
+                </Box>
             </Box>
-        </Box>
+        </SlideFade>
     )
 };
 
