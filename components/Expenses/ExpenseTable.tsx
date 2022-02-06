@@ -3,7 +3,7 @@ import expenses from '../../resources/Calculo_expenses.json'
 import React, { useEffect, useState } from 'react';
 import { FiTrash2 } from 'react-icons/fi';
 import dayjs from 'dayjs';
-import { CategoryEnum } from '../../models/Category';
+import { CategoryEnum } from '../../models/CategoryEnum';
 import Link from 'next/link';
 import DeleteExpenseModalComponent from '../Modals/DeleteExpenseModal';
 
@@ -33,7 +33,7 @@ const ExpenseTable = () => {
                   {expense.categories.map((category, index) => (
                     <Tag mx="1" size="sm" key={index} variant='solid' colorScheme='teal'>
                       { //@ts-ignore 
-                        CategoryEnum[category]
+                        CategoryEnum[category.name]
                       }
                     </Tag>
                   ))}

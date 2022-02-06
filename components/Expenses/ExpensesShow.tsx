@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
 import { FiArrowLeft } from 'react-icons/fi';
-import { CategoryEnum } from '../../models/Category';
+import { CategoryEnum } from '../../models/CategoryEnum';
 import expenses from '../../resources/Calculo_expenses.json'
 
 const ExpensesShow = () => {

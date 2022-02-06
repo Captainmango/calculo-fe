@@ -1,6 +1,6 @@
 import { Center, Box, Flex, Heading } from '@chakra-ui/react';
 import React from 'react';
-import { CategoryEnum, getEnumKeyByEnumValue } from '../../models/Category';
+import { CategoryEnum, getEnumKeyByEnumValue } from '../../models/CategoryEnum';
 
 const ReportsPage = () => {
 

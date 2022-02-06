@@ -2,7 +2,12 @@ import create, { StoreApi } from "zustand"
 import { devtools, redux } from "zustand/middleware"
 import { User } from "../models/User"
 
-export const userActionTypes = { logIn: "LOG_IN", logOut: "LOG_OUT", createUser: "CREATE_USER", fetchUser: "FETCH_USER" }
+export const userActionTypes = { 
+    logIn: "LOG_IN", 
+    logOut: "LOG_OUT", 
+    createUser: "CREATE_USER", 
+    fetchUser: "FETCH_USER" 
+}
 
 type UserAction = {
     type: string,
