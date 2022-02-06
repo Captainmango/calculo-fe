@@ -16,12 +16,14 @@ type UserAction = {
 
 export interface UserState {
     user: User | null,
-    loading: boolean
+    loading: boolean,
+    authenticated: boolean
 }
 
 let initialState: UserState = {
     user: null,
-    loading: false
+    loading: false,
+    authenticated: false
 }
 
 const reducer = (state: UserState, action: UserAction) => {
@@ -29,22 +31,26 @@ const reducer = (state: UserState, action: UserAction) => {
         case userActionTypes.logIn:
             return {
                 user: state.user = action.body.user,
-                loading: state.loading = false
+                loading: state.loading = false,
+                authenticated: true
             }
         case userActionTypes.logOut:
             return {
                 user: state.user = null,
-                loading: state.loading = false
+                loading: state.loading = false,
+                authenticated: false
             }
         case userActionTypes.createUser:
             return {
                 user: state.user = null,
-                loading: state.loading = true
+                loading: state.loading = true,
+                authenticated: false
             }
         case userActionTypes.fetchUser:
             return {
                 user: state.user = null,
-                loading: state.loading = true
+                loading: state.loading = true,
+                authenticated: false
             }
         default:
             return state
