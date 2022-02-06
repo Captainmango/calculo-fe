@@ -1,8 +1,8 @@
 import { Box, Button, Icon, Menu, MenuButton, MenuList, useDisclosure } from '@chakra-ui/react';
 import React from 'react';
 import { FiEdit2 } from 'react-icons/fi';
-import CreateExpenseModalComponent from '../modals/CreateExpenseModal';
-import DeleteExpenseModalComponent from '../modals/DeleteExpenseModal';
+import CreateExpenseModalComponent from '../Modals/CreateExpenseModal';
+
 
 const ActionButton = () => {
     const { isOpen, onOpen, onClose } = useDisclosure()

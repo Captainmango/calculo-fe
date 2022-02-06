@@ -5,7 +5,7 @@ import { FiTrash2 } from 'react-icons/fi';
 import dayjs from 'dayjs';
 import { CategoryEnum } from '../../models/Category';
 import Link from 'next/link';
-import DeleteExpenseModalComponent from '../modals/DeleteExpenseModal';
+import DeleteExpenseModalComponent from '../Modals/DeleteExpenseModal';
 
 const ExpenseTable = () => {
 
