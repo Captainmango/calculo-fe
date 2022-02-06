@@ -14,7 +14,7 @@ const ExpenseTable = () => {
       in={true}
       unmountOnExit
     >
-      <Table colorScheme="blue" mt="8" size="sm">
+      <Table colorScheme="blue" size="sm">
         <Thead>
           <Tr>
             <Th>Title</Th>

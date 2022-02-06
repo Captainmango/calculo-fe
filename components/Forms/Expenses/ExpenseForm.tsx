@@ -16,7 +16,7 @@ const ExpenseForm = (props: ExpenseFormProps) => {
 
     return (
         <Container p="8" centerContent>
-            <Image src="/calculo_logo 1.svg" alt="Calculo icon" width="100" height="100" />
+            <Image src="/calculo_logo 1.svg" alt="Calculo icon" width="80" height="80" />
             <Box w="80%">
                 <form>
                     <FormControl py="8">
@@ -38,8 +38,8 @@ const ExpenseForm = (props: ExpenseFormProps) => {
                             </NumberInput>
                         </FormControl>
                         <FormControl>
-                            <FormLabel htmlFor='total' color="black">Category</FormLabel>
-                            <Select variant='flushed'>
+                            <FormLabel htmlFor='category' color="black">Category</FormLabel>
+                            <Select id="category" variant='flushed'>
                                 <option value="test">Test</option>
                             </Select>
                         </FormControl>

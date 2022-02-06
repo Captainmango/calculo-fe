@@ -20,7 +20,15 @@ const ActionButton = () => {
                 >
                     <Icon as={FiEdit2} fontSize="4xl" color="gray.300" />
                 </MenuButton>
-                <MenuList>
+                <MenuList 
+                    h="200px" 
+                    border="0px"
+                    bg="whiteAlpha.700"
+                    display="flex"
+                    flexDirection="column-reverse"
+                    justifyContent="flex-end"
+                    minW="100px"
+                >
                     <CreateExpenseModalComponent />
                 </MenuList>
             </Menu>
