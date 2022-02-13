@@ -2,7 +2,6 @@ import { NextApiRequest, NextApiResponse } from "next"
 import { CategoryEnum } from "../../../models/CategoryEnum"
 import { Expense } from "../../../models/Expense"
 import expensesArray from '../../../resources/Calculo_expenses.json'
-import { ActionTypes, useAppStore } from "../../../store"
 
 export default async function handler(
     req: NextApiRequest,
