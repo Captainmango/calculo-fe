@@ -6,6 +6,6 @@ export type Expense = {
     notes: string,
     categories: Category[],
     total: number,
-    created_at: string,
-    updated_at: string
+    createdAt: string,
+    updatedAt: string
 }

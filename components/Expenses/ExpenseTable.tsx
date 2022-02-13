@@ -1,14 +1,18 @@
 import { Button, Icon, Table, Tag, Tbody, Td, Th, Thead, Tr, SlideFade } from '@chakra-ui/react';
-import expenses from '../../resources/Calculo_expenses.json'
-import React, { useEffect, useState } from 'react';
-import { FiTrash2 } from 'react-icons/fi';
+import React from 'react';
 import dayjs from 'dayjs';
 import { CategoryEnum } from '../../models/CategoryEnum';
-import Link from 'next/link';
 import DeleteExpenseModalComponent from '../Modals/DeleteExpenseModal';
-import { ExpenseStore } from '../../store/ExpensesStore';
+import { useAppStore } from '../../store';
+import { Expense } from '../../models/Expense';
 
 const ExpenseTable = () => {
+
+  //@ts-ignore
+  const [useStore, api] = useAppStore
+
+  //@ts-ignore
+  const expenses: Expense[] = useStore((state) => state.expenses)
 
   return (
     <SlideFade
@@ -39,7 +43,7 @@ const ExpenseTable = () => {
                     </Tag>
                   ))}
                 </Td>
-                <Td>{dayjs(expense.createdAt).format('DD/MM/YYYY HH:mm')}</Td>
+                <Td>{dayjs(expense.created_at).format('DD/MM/YYYY HH:mm')}</Td>
                 <Td>{
                   new Intl.NumberFormat('en-GB', {
                     style: 'currency',
