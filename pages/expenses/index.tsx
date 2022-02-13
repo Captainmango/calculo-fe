@@ -11,10 +11,6 @@ import { ActionTypes, useAppStore } from '../../store'
 const Index: NextPage = () => {
 
     const [dataMode, toggleDataMode] = useState(false)
-    const fetcher = (url: string) => fetch(url).then((res) => res.json())
-
-    //@ts-ignore
-    const [useStore, api] = useAppStore
 
     return (
         <TwoColumn>

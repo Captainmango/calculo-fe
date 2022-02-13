@@ -58,11 +58,6 @@ function deleteExpense(expenses: Expense[], id: number): Expense[] {
     return expensesArray
 }
 
-async function fetchExpenses()
-{
-    const expenses = await fetch('api/expenses')
-}
-
 const reducer = (state: AppState, action: Action) => {
     switch (action.type) {
         case ActionTypes.logIn:
@@ -102,7 +97,7 @@ const reducer = (state: AppState, action: Action) => {
         case ActionTypes.storeExpenses:
             return {
                 expenses: state.expenses = action.body.expenses,
-                loading: false
+                loading: state.loading = false
             }
         case ActionTypes.addExpense:
             return {
