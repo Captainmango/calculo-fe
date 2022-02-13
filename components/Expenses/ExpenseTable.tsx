@@ -43,7 +43,7 @@ const ExpenseTable = () => {
                     </Tag>
                   ))}
                 </Td>
-                <Td>{dayjs(expense.created_at).format('DD/MM/YYYY HH:mm')}</Td>
+                <Td>{dayjs(expense.createdAt).format('DD/MM/YYYY HH:mm')}</Td>
                 <Td>{
                   new Intl.NumberFormat('en-GB', {
                     style: 'currency',
