@@ -9,7 +9,7 @@ import { Expense } from '../../models/Expense';
 const ExpenseTable = () => {
 
   //@ts-ignore
-  const [useStore, api] = useAppStore
+  const [useStore] = useAppStore
 
   //@ts-ignore
   const expenses: Expense[] = useStore((state) => state.expenses)
