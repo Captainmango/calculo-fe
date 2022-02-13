@@ -62,7 +62,7 @@ const reducer = (state: ExpenseState, action: ExpenseAction) => {
         case expenseActionTypes.storeExpenses:
             return {
                 expenses: state.expenses = action.body.expenses,
-                loading: state.loading = action.body.loading
+                loading: false
             }
         case expenseActionTypes.addExpense:
             return {

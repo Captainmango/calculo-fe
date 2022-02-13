@@ -6,6 +6,7 @@ import dayjs from 'dayjs';
 import { CategoryEnum } from '../../models/CategoryEnum';
 import Link from 'next/link';
 import DeleteExpenseModalComponent from '../Modals/DeleteExpenseModal';
+import { ExpenseStore } from '../../store/ExpensesStore';
 
 const ExpenseTable = () => {
 
@@ -58,4 +59,4 @@ const ExpenseTable = () => {
       )
 };
 
-      export default ExpenseTable;
+export default ExpenseTable;

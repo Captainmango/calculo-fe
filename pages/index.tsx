@@ -1,8 +1,8 @@
 import { Button, ButtonGroup, Center, Container, Divider, Flex, Heading, Text } from '@chakra-ui/react';
 import type { NextPage } from 'next'
 import Link from 'next/link';
-import LoginForm from '../components/Forms/UserAccounts/login';
 import LandingPage from '../components/Layout/Landing';
+import { useAppStore } from '../store';
 
 const Index: NextPage = () => {
 

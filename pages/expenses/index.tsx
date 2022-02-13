@@ -6,7 +6,6 @@ import ExpenseDataTable from '../../components/Expenses/ExpenseDataTable'
 import ExpenseTable from '../../components/Expenses/ExpenseTable'
 import TwoColumn from '../../components/Layout/TwoColumn'
 
-
 const Index: NextPage = () => {
 
     const [dataMode, toggleDataMode] = useState(false)

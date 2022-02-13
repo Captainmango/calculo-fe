@@ -2,14 +2,14 @@ import { Avatar, Divider, Flex, Heading, IconButton } from '@chakra-ui/react'
 import { FiBarChart2, FiBookOpen, FiMenu, FiSettings } from 'react-icons/fi'
 import React, { useState } from 'react'
 import { SidebarItem } from './SidebarItem';
-import { UserStore } from '../../../store/UserAuthStore';
+import { useAppStore } from '../../../store';
 
 const Sidebar = () => {
 
     const [expanded, setExpanded] = useState(false);
 
     //@ts-ignore
-    const [useStore, api] = UserStore
+    const [useStore, api] = useAppStore
     //@ts-ignore
     const user = useStore(state => state.user)
 
@@ -85,8 +85,6 @@ const Sidebar = () => {
                     </Flex>
                 </Flex>
             </Flex>
-
-
         </Flex>
     )
 }
