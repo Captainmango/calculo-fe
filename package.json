@@ -25,6 +25,7 @@
     "react-icons": "^4.3.1",
     "react-table": "^7.7.0",
     "react-toastify": "^8.1.1",
+    "swr": "^1.2.1",
     "zustand": "^3.6.8"
   },
   "devDependencies": {
