@@ -11,7 +11,6 @@ export const ActionTypes = {
     fetchUser: "FETCH_USER",
 
     // EXPENSE ACTIONS
-
     fetchExpenses: "FETCH_EXPENSES",
     storeExpenses: "STORE_EXPENSES",
     addExpense: "ADD_EXPENSE",
