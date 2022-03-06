@@ -1,13 +1,13 @@
 import { Avatar, Box, Button, Center, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerFooter, DrawerHeader, DrawerOverlay, Flex, Heading, Input, useDisclosure } from '@chakra-ui/react';
 import React from 'react';
 import { FiBarChart2, FiBookOpen, FiMenu, FiSettings } from 'react-icons/fi';
-import { UserStore } from '../../../store/UserAuthStore';
+import { useAppStore } from '../../../store/index';
 import { SidebarItem } from './SidebarItem';
 
 const MobileDrawer = () => {
     const { isOpen, onOpen, onClose } = useDisclosure()
     //@ts-ignore
-    const [useStore, api] = UserStore
+    const [useStore, api] = useAppStore
     //@ts-ignore
     const user = useStore(state => state.user)
 
