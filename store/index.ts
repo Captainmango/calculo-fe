@@ -5,8 +5,8 @@ import { User } from '../models/User'
 
 export const ActionTypes = {
     // USER ACTIONS 
-    logIn: "LOG_IN",
-    logOut: "LOG_OUT",
+    storeUser: "STORE_USER",
+    flushUser: "FLUSH_USER",
     createUser: "CREATE_USER",
     fetchUser: "FETCH_USER",
 
@@ -16,7 +16,7 @@ export const ActionTypes = {
     addExpense: "ADD_EXPENSE",
     updateExpense: "UPDATE_EXPENSE",
     deleteExpense: "DELETE_EXPENSE",
-    pushExpense: "PUSH_EXPENSE"
+    pushExpense: "PUSH_EXPENSE",
 }
 
 export type Action = {
@@ -59,13 +59,13 @@ function deleteExpense(expenses: Expense[], id: number): Expense[] {
 
 const reducer = (state: AppState, action: Action) => {
     switch (action.type) {
-        case ActionTypes.logIn:
+        case ActionTypes.storeUser:
             return {
                 user: state.user = action.body.user,
                 loading: state.loading = false,
                 authenticated: true
             }
-        case ActionTypes.logOut:
+        case ActionTypes.flushUser:
             return {
                 user: state.user = null,
                 loading: state.loading = false,
