@@ -6,15 +6,15 @@ export default async function handler(
     req: NextApiRequest,
     res: NextApiResponse
 ) {
-    axios.post("http://localhost:8080/api/v1/auth/login", req.body)
+   return axios.post("http://localhost:8080/api/v1/auth/login", req.body)
+        .then( data => {
+            res.status(200)
+            res.send(data.data)
+        })
         .catch( error => {
             res.status(401)
             res.send({
                 "message": error.message
             })
-        })
-        .then( data => {
-            res.status(200)
-            res.send(data)
         })
 }
