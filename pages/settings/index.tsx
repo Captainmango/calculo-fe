@@ -1,11 +1,11 @@
 import React from 'react';
-import Settings from '../../components/Forms/Settings/Settings';
+import SettingsForm from '../../components/Forms/Settings/SettingsForm';
 import TwoColumn from '../../components/Layout/TwoColumn';
 
 const IndexPage = () => {
     return (
         <TwoColumn>
-            <Settings />
+            <SettingsForm />
         </TwoColumn>
     )
 };

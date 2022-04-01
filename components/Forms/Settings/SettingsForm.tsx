@@ -2,7 +2,7 @@ import { Center, Heading, Container, Box, Button, Tooltip, Icon } from '@chakra-
 import React, { useState } from 'react';
 import { FiMoon, FiSun } from 'react-icons/fi';
 
-const Settings = () => {
+const SettingsForm = () => {
     const [darkMode, setDarkMode] = useState(false);
     return (<>
         <Center>
@@ -24,4 +24,4 @@ const Settings = () => {
     )
 };
 
-export default Settings;
+export default SettingsForm;

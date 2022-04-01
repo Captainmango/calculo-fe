@@ -1,6 +1,6 @@
 import { Box, Button, FormControl, FormHelperText, FormLabel, Input, Link } from '@chakra-ui/react';
 import React from 'react';
-import SignUpForm from '../../components/Forms/UserAccounts/signup';
+import SignUpForm from '../../components/Forms/UserAccounts/SignUpForm';
 import LandingPage from '../../components/Layout/Landing';
 
 const SignUp = () => {
