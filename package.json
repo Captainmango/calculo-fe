@@ -18,6 +18,7 @@
     "axios": "^0.26.1",
     "chart.js": "^3.7.0",
     "cookie": "^0.4.2",
+    "cookies-next": "^2.0.4",
     "dayjs": "^1.10.7",
     "formik": "^2.2.9",
     "framer-motion": "^5.6.0",
