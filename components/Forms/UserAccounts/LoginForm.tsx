@@ -12,7 +12,7 @@ const LoginForm = () => {
         <Container centerContent>
             <Image src="/calculo_logo 1.svg" alt="Calculo icon" width="100" height="100" />
             <Box w="80%">
-                <form>
+                <form onSubmit={loginFormHandler.handleSubmit}>
                     <FormControl
                         //@ts-ignore
                         isInvalid={loginFormHandler.touched.email && loginFormHandler.errors.email}
@@ -36,9 +36,7 @@ const LoginForm = () => {
                                     Sign up
                                 </Button>
                             </Link>
-                            <Button colorScheme="whatsapp"
-                                //@ts-ignore
-                                onClick={loginFormHandler.handleSubmit}>
+                            <Button type="submit" colorScheme="whatsapp">
                                 Log in
                             </Button>
                         </ButtonGroup>
