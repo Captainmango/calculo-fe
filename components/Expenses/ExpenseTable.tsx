@@ -3,14 +3,9 @@ import React from 'react';
 import dayjs from 'dayjs';
 import { CategoryEnum } from '../../models/CategoryEnum';
 import DeleteExpenseModalComponent from '../Modals/DeleteExpenseModal';
-import { useAppStore } from '../../store';
 import { Expense } from '../../models/Expense';
 
 const ExpenseTable = () => {
-
-  //@ts-ignore
-  const [useStore, api] = useAppStore
-  const expenses: Expense[] = useStore((state) => state.expenses)
 
   return (
     <SlideFade
@@ -19,7 +14,6 @@ const ExpenseTable = () => {
     >
       <Table colorScheme="blue" size="sm">
         <Thead>
-          {console.log(expenses)}
           <Tr>
             <Th>Title</Th>
             <Th>Category</Th>
@@ -29,7 +23,7 @@ const ExpenseTable = () => {
           </Tr>
         </Thead>
         <Tbody>
-          {expenses.map(expense => {
+          {false && expenses.map(expense => {
             return (
               <Tr key={expense.id}>
                 <Td>{expense.title}</Td>

@@ -2,16 +2,10 @@ import { Avatar, Divider, Flex, Heading, IconButton } from '@chakra-ui/react'
 import { FiBarChart2, FiBookOpen, FiMenu, FiSettings } from 'react-icons/fi'
 import React, { useState } from 'react'
 import { SidebarItem } from './SidebarItem';
-import { useAppStore } from '../../../store';
 
 const Sidebar = () => {
 
     const [expanded, setExpanded] = useState(false);
-
-    //@ts-ignore
-    const [useStore, api] = useAppStore
-    //@ts-ignore
-    const user = useStore(state => state.user)
 
     return (
         <Flex
@@ -81,7 +75,7 @@ const Sidebar = () => {
                         <Heading
                             as="h3"
                             size="sm"
-                        >{user ? user.firstName : "User"}</Heading>
+                        >{"User"}</Heading>
                     </Flex>
                 </Flex>
             </Flex>

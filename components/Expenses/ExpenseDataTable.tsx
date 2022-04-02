@@ -5,13 +5,10 @@ import { AgGridColumn, AgGridReact } from 'ag-grid-react';
 import { Box, SlideFade } from '@chakra-ui/react';
 import dayjs from 'dayjs';
 import { Expense } from '../../models/Expense';
-import { useAppStore } from '../../store';
 
 const ExpenseDataTable = () => {
 
-    //@ts-ignore
-    const [useStore, api] = useAppStore
-    const expenses: Expense[] = useStore((state) => state.expenses)
+    const expenses = []
 
     const totalFilterParams = {
         allowedCharPattern: '\\d\\-\\,',
