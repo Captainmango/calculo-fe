@@ -2,17 +2,33 @@ import { FormControl, FormHelperText, FormLabel, Input, Box, Button, Container, 
 import Link from 'next/link'
 import React from 'react'
 import Image from 'next/image'
-import { useLoginFormHandler } from '../handlers/useLoginFormHandler'
+import { toast } from 'react-toastify'
+import { useLoginFormHandler } from '../Handlers/useLoginFormHandler'
+import { useLoginUserQuery } from '../../../queries/users/hooks'
+import { useRouter } from 'next/router'
 
 const LoginForm = () => {
+    const router = useRouter()
+    const onSuccess = () => {
+        router.push("/expenses")
+        toast.success("Logged in successfully")
+    }
+    const onError = () => {
+    }
 
     const loginFormHandler = useLoginFormHandler()
+    const { refetch } = useLoginUserQuery(onSuccess, onError, loginFormHandler.values)
+
+    const handleSubmit = () => {
+        loginFormHandler.handleSubmit()
+        refetch()
+    }
 
     return (
         <Container centerContent>
             <Image src="/calculo_logo 1.svg" alt="Calculo icon" width="100" height="100" />
             <Box w="80%">
-                <form onSubmit={loginFormHandler.handleSubmit}>
+                <form>
                     <FormControl
                         //@ts-ignore
                         isInvalid={loginFormHandler.touched.email && loginFormHandler.errors.email}
@@ -36,7 +52,7 @@ const LoginForm = () => {
                                     Sign up
                                 </Button>
                             </Link>
-                            <Button type="submit" colorScheme="whatsapp">
+                            <Button onClick={handleSubmit} colorScheme="whatsapp">
                                 Log in
                             </Button>
                         </ButtonGroup>

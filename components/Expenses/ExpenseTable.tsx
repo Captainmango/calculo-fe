@@ -4,8 +4,11 @@ import dayjs from 'dayjs';
 import { CategoryEnum } from '../../models/CategoryEnum';
 import DeleteExpenseModalComponent from '../Modals/DeleteExpenseModal';
 import { Expense } from '../../models/Expense';
+import { useExpensesQuery } from '../../queries/expenses/hooks';
 
 const ExpenseTable = () => {
+
+  const { isLoading, data } = useExpensesQuery()
 
   return (
     <SlideFade
@@ -23,16 +26,14 @@ const ExpenseTable = () => {
           </Tr>
         </Thead>
         <Tbody>
-          {false && expenses.map(expense => {
+          {!isLoading && data?.data.map(expense => {
             return (
               <Tr key={expense.id}>
                 <Td>{expense.title}</Td>
                 <Td>
                   {expense.categories.map((category, index) => (
                     <Tag mx="1" size="sm" key={index} variant='solid' colorScheme='teal'>
-                      { //@ts-ignore 
-                        CategoryEnum[category.name]
-                      }
+                       {category.name}
                     </Tag>
                   ))}
                 </Td>

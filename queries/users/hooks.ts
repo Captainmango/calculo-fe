@@ -1,15 +1,21 @@
-import { useMutation, useQuery, useQueryClient } from "react-query"
+import { useMutation, useQuery, useQueryClient, UseQueryResult } from "react-query"
 import axios from "axios"
 import { toast } from "react-toastify"
-import { Router } from "next/router"
 
 type loginData = {
-    email: string;
-    password: string;
+    email: string
+    password: string
 }
 
 type refreshtoken = {
     refreshToken: string
+}
+
+type registerData = {
+    firstName: string
+    lastName: string
+    email: string
+    password: string
 }
 
 async function userLogin(data: loginData)
@@ -22,11 +28,16 @@ async function userRefresh(data: refreshtoken)
     return axios.post('/api/users/refreshtoken', data)
 }
 
-export const useLoginUserMutation = () => {
+async function userRegister(data: registerData)
+{
+    return axios.post('/api/users/register', data)
+}
+
+export const useRefreshUserMutation = () => {
     const queryClient = useQueryClient()
     return useMutation(userLogin, {
         onSuccess: data => {
-            queryClient.setQueryData('userData', data.data)
+            queryClient.setQueryData('userRefresh', data.data)
         },
         onError: error => {
             toast.error({error})
@@ -34,8 +45,14 @@ export const useLoginUserMutation = () => {
     })
 }
 
-export const useUserData = (data: refreshtoken) => {
-    const queryClient = useQueryClient()
-    
+export const useLoginUserQuery = (onSuccess, onError, data: loginData) => {
+    return useQuery('userData', () => userLogin(data), {
+        onSuccess,
+        onError,
+        enabled: false
+    })
+}
+
+export const useRefreshUserQuery = (data: refreshtoken) => {  
     return useQuery('userData', () => userRefresh(data))
 }

@@ -5,13 +5,14 @@ import ActionButton from '../../components/Expenses/ActionButton'
 import ExpenseDataTable from '../../components/Expenses/ExpenseDataTable'
 import ExpenseTable from '../../components/Expenses/ExpenseTable'
 import TwoColumn from '../../components/Layout/TwoColumn'
-import expenses from '../../resources/Calculo_expenses.json'
 import { Expense } from '../../models/Expense';
+import { useExpensesQuery } from '../../queries/expenses/hooks'
 
 //@ts-ignore
-const Index: NextPage = (props: {fetchedExpenses: Expense[]}) => {
+const Index: NextPage = () => {
 
     const [dataMode, toggleDataMode] = useState(false)
+    const { isLoading, data } = useExpensesQuery()
 
     return (
         <TwoColumn>
@@ -24,21 +25,13 @@ const Index: NextPage = (props: {fetchedExpenses: Expense[]}) => {
                         Data mode {dataMode ? 'ON' : 'OFF'}
                     </FormLabel>
                     <Switch id='data-mode' onChange={() => toggleDataMode(!dataMode)} />
-                </FormControl>
+                </FormControl> 
             </HStack>
             {dataMode && <ExpenseDataTable />}
             {!dataMode && <ExpenseTable />}
             <ActionButton />
         </TwoColumn>
     )
-}
-
-export const getServerSideProps: GetServerSideProps = async (context) => {
-    return {
-        props: {
-            fetchedExpenses: expenses
-        }
-    }
 }
 
 export default Index
