@@ -19,7 +19,7 @@ export const useLogoutUserMutation = () => {
 
     return useMutation(userLogout, {
         onSuccess: data => {
-            queryClient.setQueryData('userData', {})
+            queryClient.invalidateQueries(["userData", "expenses"])
             toast.success("You've logged out")
         },
         onError: error => {
