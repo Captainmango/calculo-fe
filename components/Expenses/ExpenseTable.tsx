@@ -8,7 +8,7 @@ import { useExpensesQuery } from '../../queries/expenses/hooks';
 
 const ExpenseTable = () => {
 
-  const { isLoading, data } = useExpensesQuery()
+  const { isError, isLoading, data } = useExpensesQuery()
 
   return (
     <SlideFade
@@ -26,7 +26,7 @@ const ExpenseTable = () => {
           </Tr>
         </Thead>
         <Tbody>
-          {!isLoading && data?.data.map(expense => {
+          {!isError && !isLoading && data?.data.map(expense => {
             return (
               <Tr key={expense.id}>
                 <Td>{expense.title}</Td>

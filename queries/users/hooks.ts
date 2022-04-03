@@ -2,6 +2,50 @@ import { useMutation, useQuery, useQueryClient, UseQueryResult } from "react-que
 import axios from "axios"
 import { toast } from "react-toastify"
 
+export const useRefreshUserMutation = () => {
+    const queryClient = useQueryClient()
+    return useMutation(userLogin, {
+        onSuccess: data => {
+            queryClient.setQueryData('userRefresh', data.data)
+        },
+        onError: error => {
+            toast.error({error})
+        }
+    })
+}
+
+export const useLogoutUserMutation = () => {
+    const queryClient = useQueryClient()
+
+    return useMutation(userLogout, {
+        onSuccess: data => {
+            queryClient.setQueryData('userData', {})
+            toast.success("You've logged out")
+        },
+        onError: error => {
+        }
+    })
+}
+
+export const useLoginUserQuery = (onSuccess, onError, data: loginData) => {
+    return useQuery('userData', () => userLogin(data), {
+        onSuccess,
+        onError,
+        enabled: false
+    })
+}
+
+export const useRefreshUserQuery = (data: refreshtoken) => {  
+    return useQuery('userData', () => userRefresh(data))
+}
+
+export const useRegisterUserQuery = (onSuccess, onError, data: registerData) => {
+    return useQuery('userData', () => userRegister(data), {
+        onSuccess,
+        onError,
+        enabled: false
+    })
+}
 type loginData = {
     email: string
     password: string
@@ -33,26 +77,7 @@ async function userRegister(data: registerData)
     return axios.post('/api/users/register', data)
 }
 
-export const useRefreshUserMutation = () => {
-    const queryClient = useQueryClient()
-    return useMutation(userLogin, {
-        onSuccess: data => {
-            queryClient.setQueryData('userRefresh', data.data)
-        },
-        onError: error => {
-            toast.error({error})
-        }
-    })
-}
-
-export const useLoginUserQuery = (onSuccess, onError, data: loginData) => {
-    return useQuery('userData', () => userLogin(data), {
-        onSuccess,
-        onError,
-        enabled: false
-    })
-}
-
-export const useRefreshUserQuery = (data: refreshtoken) => {  
-    return useQuery('userData', () => userRefresh(data))
+async function userLogout()
+{
+    return axios.get('/api/users/logout')
 }

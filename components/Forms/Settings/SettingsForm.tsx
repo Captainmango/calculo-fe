@@ -1,9 +1,13 @@
 import { Center, Heading, Container, Box, Button, Tooltip, Icon } from '@chakra-ui/react';
 import React, { useState } from 'react';
 import { FiMoon, FiSun } from 'react-icons/fi';
+import { useLogoutUserMutation } from '../../../queries/users/hooks';
 
 const SettingsForm = () => {
     const [darkMode, setDarkMode] = useState(false);
+
+    const { mutate: logout } = useLogoutUserMutation()
+
     return (<>
         <Center>
             <Heading p="8">Settings</Heading>
@@ -11,7 +15,7 @@ const SettingsForm = () => {
         <Container>
             <Box p="4">
                 <Tooltip label="Log out of Calculo">
-                    <Button>Logout</Button>
+                    <Button onClick={() => logout()}>Logout</Button>
                 </Tooltip>
             </Box>
             <Box p="4">

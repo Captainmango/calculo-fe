@@ -22,6 +22,7 @@ const LoginForm = () => {
     const handleSubmit = () => {
         loginFormHandler.handleSubmit()
         refetch()
+        loginFormHandler.resetForm()  
     }
 
     return (

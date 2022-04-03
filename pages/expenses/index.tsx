@@ -12,7 +12,7 @@ import { useExpensesQuery } from '../../queries/expenses/hooks'
 const Index: NextPage = () => {
 
     const [dataMode, toggleDataMode] = useState(false)
-    const { isLoading, data } = useExpensesQuery()
+    const { isError, data } = useExpensesQuery()
 
     return (
         <TwoColumn>
@@ -27,8 +27,8 @@ const Index: NextPage = () => {
                     <Switch id='data-mode' onChange={() => toggleDataMode(!dataMode)} />
                 </FormControl> 
             </HStack>
-            {dataMode && <ExpenseDataTable />}
-            {!dataMode && <ExpenseTable />}
+            {!isError && dataMode && <ExpenseDataTable />}
+            {!isError && !dataMode && <ExpenseTable />}
             <ActionButton />
         </TwoColumn>
     )

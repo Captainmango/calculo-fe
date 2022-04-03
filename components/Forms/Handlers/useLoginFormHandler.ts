@@ -5,11 +5,9 @@ import * as Yup from 'yup'
 export const useLoginFormHandler = () => {
 
     return useFormik({
-        initialValues: {
-            email: '',
-            password: ''
-        },
-        onSubmit: values => {
+        initialValues,
+        onSubmit: (values, {resetForm}) => {
+            resetForm({values: initialValues})
         },
         validationSchema
     })
@@ -23,3 +21,8 @@ const validationSchema = Yup.object({
         .min(6, "Password needs to be at least 6 characters long")
         .required("Password is required")
 })
+
+const initialValues = {
+    email: '',
+    password: ''
+}
