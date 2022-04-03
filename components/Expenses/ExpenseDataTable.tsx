@@ -5,11 +5,24 @@ import { AgGridColumn, AgGridReact } from 'ag-grid-react';
 import { Box, SlideFade } from '@chakra-ui/react';
 import dayjs from 'dayjs';
 import { Expense } from '../../models/Expense';
+import { useFetchExpensesQuery } from '../../queries/expenses/hooks';
+import { CategoryEnum } from '../../models/CategoryEnum';
 
 const ExpenseDataTable = () => {
 
-    const expenses = []
+    const { data } = useFetchExpensesQuery()
+    const expenses = data?.data.map(expense => {
+        return expense
+    })
 
+
+    // const categories = expenses.map(e => e.categories.map(n => n.name))
+
+
+    // basically need to get the strings to be flatter. 
+    // Not too sure if this is what I want though as I want the
+    // categories need to match the expense they belong to
+    console.log(expenses)
     const totalFilterParams = {
         allowedCharPattern: '\\d\\-\\,',
         numberParser: (text: String) => {
