@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Menu,
+import {
+  Menu,
   MenuButton,
   MenuList,
   MenuItem,
@@ -26,21 +27,33 @@ const MultiSelectMenu = (props: MultiSelectMenuProps): JSX.Element => {
             borderWidth={1}
             p={2}
             px={4}
-            borderRadius="25px"
+            borderRadius="8px"
             _focus={{
               outline: "none"
             }}
             {...buttonProps}
           >
-            {`${label}${
-              selectedOptions.length > 0 ? ` (${selectedOptions.length})` : ""
-            }`}
+            {`${label}${selectedOptions.length > 0 ? ` (${selectedOptions.length})` : " (0)"
+              }`}
           </MenuButton>
-          <MenuList>
+          <MenuList height="400px" 
+            overflow="scroll" 
+            scrollBehavior="smooth" scroll
+            sx={{
+              '&::-webkit-scrollbar': {
+                width: '8px',
+                borderRadius: '8px',
+              },
+              '&::-webkit-scrollbar-thumb': {
+                backgroundColor: `rgba(0, 0, 0, 0.08)`,
+              },
+            }}
+          >
             <MenuGroup title={undefined}>
-              <MenuItem
+              <MenuItem height="32px"
                 onClick={() => {
                   setSelectedOptions([]);
+                  props.onChange?.([])
                   // Have to close, otherwise the defaultValue won't be reset correctly
                   // and so the UI won't immediately show the menu item options unselected.
                   onClose();

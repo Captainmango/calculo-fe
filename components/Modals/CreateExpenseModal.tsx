@@ -8,9 +8,12 @@ const CreateExpenseModalComponent = () => {
 
     const { isOpen, onOpen, onClose } = useDisclosure()
 
-    const onClickHandler = () => {
+    const onSubmitHandler = () => {
         onClose()
-        toast.success('Expense created')
+    }
+
+    const onCancelHandler = () => {
+        onClose()
     }
 
     return (<>
@@ -32,7 +35,7 @@ const CreateExpenseModalComponent = () => {
                 <ModalHeader>Create an expense</ModalHeader>
                 <ModalCloseButton />
                 <ModalBody>
-                    <ExpenseForm onClickHandler={onClickHandler} />
+                    <ExpenseForm onCancelHandler={onCancelHandler} onSubmitHandler={onSubmitHandler} />
                 </ModalBody>
             </ModalContent>
         </Modal>

@@ -3,16 +3,30 @@ import Link from 'next/link';
 import React, { useState } from 'react';
 import Image from 'next/image'
 import MultiSelectMenu from '../../Shared/multiselect-menu';
+import { CategoryEnum } from '../../../models/CategoryEnum';
+import { useExpenseFormHandler } from '../Handlers/useExpenseFormHandler';
+import { useCreateExpenseMutation } from '../../../queries/expenses/hooks';
+import { toast } from 'react-toastify';
 
 interface ExpenseFormProps {
-    onClickHandler: () => void
+    onSubmitHandler: () => void
+    onCancelHandler: () => void
 }
 const ExpenseForm = (props: ExpenseFormProps) => {
 
-    const format = (val: string) => `£` + val
-    const parse = (val: string) => val.replace(/^\$/, '')
+    const expenseFormHandler = useExpenseFormHandler()
+    const { mutate: createExpense } = useCreateExpenseMutation(expenseFormHandler.values)
 
-    const [total, setTotal] = useState('0.00')
+    const onMultiChange = (categories: string[]) => {
+        //@ts-ignore
+        expenseFormHandler.values.categories = categories
+    }
+
+    const handleOnSubmit = () => {
+        createExpense(expenseFormHandler.values)
+        expenseFormHandler.handleSubmit()
+        props.onSubmitHandler()
+    }
 
     return (
         <Container p="8" centerContent>
@@ -21,39 +35,34 @@ const ExpenseForm = (props: ExpenseFormProps) => {
                 <form>
                     <FormControl py="8">
                         <FormLabel htmlFor='title' color="black">Title</FormLabel>
-                        <Input variant="flushed" id='title' type='text' color="black" />
+                        <Input variant="flushed" id='title' type='text' color="black" {...expenseFormHandler.getFieldProps("title")} />
                     </FormControl>
                     <HStack direction="row" spacing="20">
                         <FormControl>
                             <FormLabel htmlFor='total' color="black">Total</FormLabel>
                             <NumberInput
-                                onChange={(valueString) => setTotal(parse(valueString))}
-                                value={format(total)}
                                 precision={2}
-                                pattern='^((?=.*[1-9]|0)(?:\d{1,3}))((?=.*\d)(?:\.\d{3})?)*((?=.*\d)(?:\,\d\d){1}?){0,1}$'
-                                name='total'
+                                pattern='^\d+\.\d{0,2}$'
                                 id='total'
                             >
-                                <NumberInputField />
+                                <NumberInputField {...expenseFormHandler.getFieldProps("total")} />
                             </NumberInput>
                         </FormControl>
                         <FormControl>
-                            <FormLabel htmlFor='category' color="black">Category</FormLabel>
-                            <Select id="category" variant='flushed'>
-                                <option value="test">Test</option>
-                            </Select>
+                            <FormLabel htmlFor='category' color="black"></FormLabel>
+                            <MultiSelectMenu label="Categories" options={[...Object.values(CategoryEnum)] } onChange={(values) => onMultiChange(values)} />
                         </FormControl>
                     </HStack>
                     <FormControl py="8">
-                        <FormLabel htmlFor='total' color="black">Notes</FormLabel>
+                        <FormLabel htmlFor='notes' color="black">Notes</FormLabel>
                         <Textarea
                             placeholder='Enter your notes here'
                             type="flushed"
                             size="md"
                             rows={10}
                             resize="none"
-                            name='notes'
                             id='notes'
+                            {...expenseFormHandler.getFieldProps("notes")}
                         />
                     </FormControl>
                     <Center>
@@ -61,12 +70,12 @@ const ExpenseForm = (props: ExpenseFormProps) => {
                         spacing={5}
                         justifyContent='center'
                     >
-                            <Button
+                            <Button onClick={() => props.onCancelHandler()}
                                 variant="outline"
                             >
                                 Cancel
                             </Button>
-                            <Button onClick={() => props.onClickHandler()}
+                            <Button onClick={handleOnSubmit}
                                 colorScheme="whatsapp"
                             >
                                 Submit

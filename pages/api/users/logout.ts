@@ -3,6 +3,7 @@ import { setCookie } from "../../../resources/utils/setCookieOnResponse"
 
 export default function handler(req: NextApiRequest, res: NextApiResponse)
 {
-    setCookie(res, "calculo_token", "")
-    res.send("Logged out successfully")
+    delete req.cookies.calculo_token
+    setCookie(res, "calculo_token", "", {expires: new Date(Date.now())})
+    res.send(req.cookies)
 }
