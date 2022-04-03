@@ -6,13 +6,13 @@ import ExpenseDataTable from '../../components/Expenses/ExpenseDataTable'
 import ExpenseTable from '../../components/Expenses/ExpenseTable'
 import TwoColumn from '../../components/Layout/TwoColumn'
 import { Expense } from '../../models/Expense';
-import { useExpensesQuery } from '../../queries/expenses/hooks'
+import { useFetchExpensesQuery } from '../../queries/expenses/hooks'
 
 //@ts-ignore
 const Index: NextPage = () => {
 
     const [dataMode, toggleDataMode] = useState(false)
-    const { isError, data } = useExpensesQuery()
+    const { isError, data } = useFetchExpensesQuery()
 
     return (
         <TwoColumn>

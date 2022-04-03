@@ -2,14 +2,20 @@ import { Button, Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButto
 import React from 'react';
 import { FiTrash2 } from 'react-icons/fi';
 import { toast } from 'react-toastify'
+import { useDeleteExpenseMutation } from '../../queries/expenses/hooks';
 
-const DeleteExpenseModalComponent = () => {
+interface DeleteModalProps {
+    id: number
+}
+
+const DeleteExpenseModalComponent = (props: DeleteModalProps) => {
 
     const { isOpen, onOpen, onClose } = useDisclosure()
+    const {mutate: deleteExpense} = useDeleteExpenseMutation(props.id) 
 
     const onClickHandler = () => {
         onClose()
-        toast.success('Expense deleted')
+        deleteExpense(props.id)
     }
 
     return (<>

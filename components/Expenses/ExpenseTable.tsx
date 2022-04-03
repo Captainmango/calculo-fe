@@ -4,11 +4,11 @@ import dayjs from 'dayjs';
 import { CategoryEnum } from '../../models/CategoryEnum';
 import DeleteExpenseModalComponent from '../Modals/DeleteExpenseModal';
 import { Expense } from '../../models/Expense';
-import { useExpensesQuery } from '../../queries/expenses/hooks';
+import { useFetchExpensesQuery } from '../../queries/expenses/hooks';
 
 const ExpenseTable = () => {
 
-  const { isError, isLoading, data } = useExpensesQuery()
+  const { isError, isLoading, data } = useFetchExpensesQuery()
 
   return (
     <SlideFade
@@ -46,7 +46,7 @@ const ExpenseTable = () => {
                   }).format(expense.total)}
                 </Td>
                 <Td>
-                  <DeleteExpenseModalComponent />
+                  <DeleteExpenseModalComponent id={expense.id} />
                 </Td>
               </Tr>
             )

@@ -13,5 +13,4 @@ export default async function handler(
         .then( data => {
             res.status(202).send("Successfully created")
         })
-
 }
