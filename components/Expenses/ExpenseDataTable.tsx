@@ -5,24 +5,16 @@ import { AgGridColumn, AgGridReact } from 'ag-grid-react';
 import { Box, SlideFade } from '@chakra-ui/react';
 import dayjs from 'dayjs';
 import { Expense } from '../../models/Expense';
-import { useFetchExpensesQuery } from '../../queries/expenses/hooks';
+import { useFetchExpensesQuery, useFetchFormatedExpensesQuery } from '../../queries/expenses/hooks';
 import { CategoryEnum } from '../../models/CategoryEnum';
+import { parseMutationArgs } from 'react-query/types/core/utils';
 
 const ExpenseDataTable = () => {
 
-    const { data } = useFetchExpensesQuery()
-    const expenses = data?.data.map(expense => {
-        return expense
-    })
+    const { data } = useFetchFormatedExpensesQuery()
 
+    const expenses = data
 
-    // const categories = expenses.map(e => e.categories.map(n => n.name))
-
-
-    // basically need to get the strings to be flatter. 
-    // Not too sure if this is what I want though as I want the
-    // categories need to match the expense they belong to
-    console.log(expenses)
     const totalFilterParams = {
         allowedCharPattern: '\\d\\-\\,',
         numberParser: (text: String) => {
@@ -94,7 +86,7 @@ const ExpenseDataTable = () => {
                         rowData={expenses}>
                         <AgGridColumn field="id" resizable={true} editable={true} sortable={true}></AgGridColumn>
                         <AgGridColumn field="title" resizable={true} sortable={true} filter="agTextColumnFilter" filterParams={fieldFilterParams}></AgGridColumn>
-                        <AgGridColumn field="categories" resizable={true} sortable={true} filter="agTextColumnFilter" filterParams={fieldFilterParams}></AgGridColumn>
+                        <AgGridColumn headerName="Categories" field="categoryNames" resizable={true} sortable={true} filter="agTextColumnFilter" filterParams={fieldFilterParams}></AgGridColumn>
                         <AgGridColumn field="createdAt" resizable={true} sortable={true} filter="agDateColumnFilter" filterParams={dateFilterParams}></AgGridColumn>
                         <AgGridColumn field="total" resizable={true} sortable={true} filter="agNumberColumnFilter" filterParams={totalFilterParams}></AgGridColumn>
                         <AgGridColumn field="notes" resizable={true} sortable={true} filter="agTextColumnFilter" filterParams={fieldFilterParams}></AgGridColumn>

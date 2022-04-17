@@ -7,6 +7,21 @@ export const useFetchExpensesQuery = () => {
     return useQuery('expenses', fetchExpenses)
 }
 
+export const useFetchFormatedExpensesQuery = () => {
+    const queryClient = useQueryClient()
+    return useQuery('expenses', fetchExpenses, {
+        select: (data) => {
+            let test = data?.data.map(expense => {
+                const list = expense.categories.map(c => c.name)
+                expense.categoryNames = list
+
+                return expense
+            })
+            return test
+        }
+    })
+}
+
 export const useCreateExpenseMutation = (data: createExpenseData) => {
     const queryClient = useQueryClient()
     return useMutation(createExpense, {
