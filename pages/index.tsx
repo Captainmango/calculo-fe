@@ -2,7 +2,6 @@ import { Button, ButtonGroup, Center, Container, Divider, Flex, Heading, Text } 
 import type { NextPage } from 'next'
 import Link from 'next/link';
 import LandingPage from '../components/Layout/Landing';
-import { useAppStore } from '../store';
 
 const Index: NextPage = () => {
 

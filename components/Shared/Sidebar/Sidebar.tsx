@@ -2,6 +2,7 @@ import { Avatar, Divider, Flex, Heading, IconButton } from '@chakra-ui/react'
 import { FiBarChart2, FiBookOpen, FiMenu, FiSettings } from 'react-icons/fi'
 import React, { useState } from 'react'
 import { SidebarItem } from './SidebarItem';
+import { useRefreshUserQuery } from '../../../queries/users/hooks';
 
 const Sidebar = () => {
 
@@ -75,7 +76,7 @@ const Sidebar = () => {
                         <Heading
                             as="h3"
                             size="sm"
-                        >{"User"}</Heading>
+                        >{"user"}</Heading>
                     </Flex>
                 </Flex>
             </Flex>

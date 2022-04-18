@@ -1,4 +1,4 @@
-import { Chart, Pie } from 'react-chartjs-2'
+import { Pie } from 'react-chartjs-2'
 import 'chart.js/auto';
 import { useFetchFormatedExpensesQuery } from '../../queries/expenses/hooks'
 import { Center, Heading } from '@chakra-ui/react';

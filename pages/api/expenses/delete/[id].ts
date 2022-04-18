@@ -11,7 +11,7 @@ export default async function handler(
         res.status(400).send(error)
     })
     .then( data => {
-        res.status(202).send("Successfully deleted")
+        res.status(200).send("Successfully deleted")
     })
         
 }

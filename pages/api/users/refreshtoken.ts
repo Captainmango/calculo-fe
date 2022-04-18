@@ -1,4 +1,3 @@
-import axios from "axios"
 import { NextApiRequest, NextApiResponse } from "next"
 import { User } from "../../../models/User"
 import { calculoAPI } from "../../../resources/utils/axiosInstance"
@@ -8,12 +7,11 @@ export default async function handler(
     req: NextApiRequest,
     res: NextApiResponse<User>
 ) {
-   return calculoAPI.post("/auth/login", req.body)
+   return calculoAPI.post("/auth/refreshtoken", {refreshToken: req.cookies['calculo_refresh']})
         .then( (data) => {
-            const {jwt, ...userData} = data.data
+            const {jwt, refreshToken, ...userData} = data.data
             res.status(200)
             setCookie(res, "calculo_token", jwt)
-            
             res.send(userData)
         })
         .catch( error => {

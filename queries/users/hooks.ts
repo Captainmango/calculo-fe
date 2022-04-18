@@ -35,8 +35,8 @@ export const useLoginUserQuery = (onSuccess, onError, data: loginData) => {
     })
 }
 
-export const useRefreshUserQuery = (data: refreshtoken) => {  
-    return useQuery('userData', () => userRefresh(data))
+export const useRefreshUserQuery = () => {  
+    return useQuery('userData', () => userRefresh())
 }
 
 export const useRegisterUserQuery = (onSuccess, onError, data: registerData) => {
@@ -67,9 +67,9 @@ async function userLogin(data: loginData)
     return axios.post('/api/users/login', data)
 }
 
-async function userRefresh(data: refreshtoken)
+async function userRefresh()
 {
-    return axios.post('/api/users/refreshtoken', data)
+    return axios.post('/api/users/refreshtoken')
 }
 
 async function userRegister(data: registerData)
