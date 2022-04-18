@@ -1,6 +1,7 @@
 import { Center, Box, Flex, Heading } from '@chakra-ui/react';
 import React from 'react';
 import { CategoryEnum, getEnumKeyByEnumValue } from '../../models/CategoryEnum';
+import { CategoryPiechart } from '../Graphs/CategoryPieChart';
 
 const ReportsPage = () => {
 
@@ -14,6 +15,9 @@ const ReportsPage = () => {
         </Center>
         <Box>
             <Flex>
+                <Box w="50%">
+                    <CategoryPiechart />
+                </Box>
             </Flex>
         </Box>
         </>
