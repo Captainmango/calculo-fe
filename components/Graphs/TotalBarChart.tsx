@@ -1,7 +1,7 @@
 import 'chart.js/auto';
 import { useFetchFormatedExpensesQuery } from '../../queries/expenses/hooks'
 import { Center, Heading } from '@chakra-ui/react';
-import { Bar, Line } from 'react-chartjs-2';
+import { Bar } from 'react-chartjs-2';
 
 export const TotalBarChart = () => {
 
@@ -25,10 +25,9 @@ export const TotalBarChart = () => {
         return Math.round((totalSpend + Number.EPSILON) * 100) / 100
     })
 
-    const totalSpendAverage = []
+    const totalSpendAverage: Array<number> = []
     categoryTotals.forEach(num => {
-        let avg = categoryTotals.reduce((a, b) => a + b) / categoryTotals.length
-        //@ts-ignore
+        let avg = categoryTotals.reduce((a: number, b: number) => a + b) / categoryTotals.length
         totalSpendAverage.push(avg)
     })
 

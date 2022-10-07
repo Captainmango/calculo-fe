@@ -15,12 +15,12 @@ export const createCookie = (
   ) => {
     const stringValue =
       typeof value === 'object' ? 'j:' + JSON.stringify(value) : String(value)
-  
+
     if ('maxAge' in options) {
-        //@ts-ignore
+      //@ts-ignore
       options.expires = new Date(Date.now() + options.maxAge * 10)
     }
-  
+
     return serialize(name, stringValue, options)
   }
 

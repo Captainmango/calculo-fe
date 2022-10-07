@@ -5,7 +5,6 @@ import { toast } from 'react-toastify'
 import { FiPlus } from 'react-icons/fi';
 
 const CreateExpenseModalComponent = () => {
-
     const { isOpen, onOpen, onClose } = useDisclosure()
 
     const onSubmitHandler = () => {
@@ -17,8 +16,8 @@ const CreateExpenseModalComponent = () => {
     }
 
     return (<>
-        <Button 
-            onClick={onOpen} 
+        <Button
+            onClick={onOpen}
             fontSize="sm"
             rightIcon={<Icon as={FiPlus} fontSize="2xl" />}
             borderRadius="25"

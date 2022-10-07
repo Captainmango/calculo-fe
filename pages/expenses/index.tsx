@@ -8,9 +8,7 @@ import TwoColumn from '../../components/Layout/TwoColumn'
 import { Expense } from '../../models/Expense';
 import { useFetchExpensesQuery } from '../../queries/expenses/hooks'
 
-//@ts-ignore
 const Index: NextPage = () => {
-
     const [dataMode, toggleDataMode] = useState(false)
     const { isError, data } = useFetchExpensesQuery()
 
@@ -25,7 +23,7 @@ const Index: NextPage = () => {
                         Data mode {dataMode ? 'ON' : 'OFF'}
                     </FormLabel>
                     <Switch id='data-mode' onChange={() => toggleDataMode(!dataMode)} />
-                </FormControl> 
+                </FormControl>
             </HStack>
             {!isError && dataMode && <ExpenseDataTable />}
             {!isError && !dataMode && <ExpenseTable />}

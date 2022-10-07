@@ -1,9 +1,7 @@
-import { Button, Icon, Table, Tag, Tbody, Td, Th, Thead, Tr, SlideFade } from '@chakra-ui/react';
+import { Table, Tag, Tbody, Td, Th, Thead, Tr, SlideFade } from '@chakra-ui/react';
 import React from 'react';
 import dayjs from 'dayjs';
-import { CategoryEnum } from '../../models/CategoryEnum';
 import DeleteExpenseModalComponent from '../Modals/DeleteExpenseModal';
-import { Expense } from '../../models/Expense';
 import { useFetchExpensesQuery } from '../../queries/expenses/hooks';
 
 const ExpenseTable = () => {

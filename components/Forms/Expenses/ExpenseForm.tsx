@@ -18,7 +18,6 @@ const ExpenseForm = (props: ExpenseFormProps) => {
     const { mutate: createExpense } = useCreateExpenseMutation(expenseFormHandler.values)
 
     const onMultiChange = (categories: string[]) => {
-        //@ts-ignore
         expenseFormHandler.values.categories = categories
     }
 
@@ -80,7 +79,6 @@ const ExpenseForm = (props: ExpenseFormProps) => {
                             >
                                 Submit
                             </Button>
-                        
                     </ButtonGroup>
                     </Center>
                 </form>

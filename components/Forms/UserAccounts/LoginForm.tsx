@@ -22,7 +22,7 @@ const LoginForm = () => {
     const handleSubmit = () => {
         loginFormHandler.handleSubmit()
         refetch()
-        loginFormHandler.resetForm()  
+        loginFormHandler.resetForm()
     }
 
     return (
@@ -39,7 +39,7 @@ const LoginForm = () => {
                         <FormErrorMessage pos="fixed">{loginFormHandler.errors.email}</FormErrorMessage>
                     </FormControl>
                     <FormControl
-                        //@ts-ignore 
+                        //@ts-ignore
                         isInvalid={loginFormHandler.touched.password && loginFormHandler.errors.password}
                         pb="8">
                         <FormLabel htmlFor='password' color="white">Password</FormLabel>

@@ -1,4 +1,4 @@
-import { Formik, useFormik } from "formik"
+import { useFormik } from "formik"
 import * as Yup from 'yup'
 
 export const useExpenseFormHandler = () => {
@@ -15,7 +15,7 @@ export const useExpenseFormHandler = () => {
 const initialValues = {
     title: '',
     total: 0.00,
-    categories: [],
+    categories: Array<string>(),
     notes: ''
 }
 

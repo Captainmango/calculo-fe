@@ -35,7 +35,7 @@ export const useLoginUserQuery = (onSuccess, onError, data: loginData) => {
     })
 }
 
-export const useRefreshUserQuery = () => {  
+export const useRefreshUserQuery = () => {
     return useQuery('userData', () => userRefresh())
 }
 
@@ -46,6 +46,7 @@ export const useRegisterUserQuery = (onSuccess, onError, data: registerData) => 
         enabled: false
     })
 }
+
 type loginData = {
     email: string
     password: string

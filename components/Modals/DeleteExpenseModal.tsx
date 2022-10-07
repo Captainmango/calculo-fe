@@ -1,7 +1,6 @@
 import { Button, Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, useDisclosure, Icon, ModalFooter, ButtonGroup } from '@chakra-ui/react';
 import React from 'react';
 import { FiTrash2 } from 'react-icons/fi';
-import { toast } from 'react-toastify'
 import { useDeleteExpenseMutation } from '../../queries/expenses/hooks';
 
 interface DeleteModalProps {
@@ -9,9 +8,8 @@ interface DeleteModalProps {
 }
 
 const DeleteExpenseModalComponent = (props: DeleteModalProps) => {
-
     const { isOpen, onOpen, onClose } = useDisclosure()
-    const {mutate: deleteExpense} = useDeleteExpenseMutation(props.id) 
+    const { mutate: deleteExpense } = useDeleteExpenseMutation(props.id)
 
     const onClickHandler = () => {
         onClose()

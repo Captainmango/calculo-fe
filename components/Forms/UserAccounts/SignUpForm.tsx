@@ -45,10 +45,11 @@ const SignUpForm = () => {
                     <FormControl pb="8">
                         <FormLabel htmlFor='email' color="white">Email</FormLabel>
                         <Input variant="flushed" id='email' type='email' color="white" {...signupFormHandler.getFieldProps("email")} />
-                        { false && signupFormHandler.errors.email ? 
-                        <FormHelperText color="white">Your email will never be shared</FormHelperText> :
-                        <FormErrorMessage pos="fixed">{signupFormHandler.errors.email}</FormErrorMessage>
-                        }           
+                        {
+                            false && signupFormHandler.errors.email
+                                ? <FormHelperText color="white">Your email will never be shared</FormHelperText>
+                                : <FormErrorMessage pos="fixed">{signupFormHandler.errors.email}</FormErrorMessage>
+                        }
                     </FormControl>
                     <FormControl pb="8">
                         <FormLabel htmlFor='password' color="white">Password</FormLabel>

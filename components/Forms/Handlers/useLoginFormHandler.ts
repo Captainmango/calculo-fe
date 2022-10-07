@@ -1,9 +1,7 @@
 import { useFormik } from "formik"
 import * as Yup from 'yup'
 
-
 export const useLoginFormHandler = () => {
-
     return useFormik({
         initialValues,
         onSubmit: (values, {resetForm}) => {

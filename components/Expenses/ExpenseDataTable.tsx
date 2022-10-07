@@ -78,7 +78,6 @@ const ExpenseDataTable = () => {
         <SlideFade
             in={true}
             unmountOnExit
-
         >
             <Box className="ag-theme-alpine" style={{ height: "70vh", width: "73.05vw" }}>
                 <Box id='myGrid' style={{ height: '100%', width: '100%' }}>

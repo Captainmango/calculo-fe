@@ -11,13 +11,13 @@ export const useFetchFormatedExpensesQuery = () => {
     const queryClient = useQueryClient()
     return useQuery('expenses', fetchExpenses, {
         select: (data) => {
-            let test = data?.data.map(expense => {
+            let transformedData = data?.data.map(expense => {
                 const list = expense.categories.map(c => c.name)
                 expense.categoryNames = list
 
                 return expense
             })
-            return test
+            return transformedData
         }
     })
 }

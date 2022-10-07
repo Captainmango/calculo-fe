@@ -5,8 +5,6 @@ import { CategoryPiechart } from '../Graphs/CategoryPieChart';
 import { TotalBarChart } from '../Graphs/TotalBarChart';
 
 const ReportsPage = () => {
-
-    
     return (
         <>
         <Center>

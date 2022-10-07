@@ -53,7 +53,6 @@ const Sidebar = () => {
                 alignItems="center"
                 mb={4}
             >
-
                 <SidebarItem expanded={expanded} url="/settings" title="Settings" icon={FiSettings} active={false} description='Edit user settings' />
 
                 <Divider display={expanded ? "flex" : "none"} />
@@ -61,12 +60,10 @@ const Sidebar = () => {
                     mt={4}
                     align="center"
                 >
-
                     <Avatar
                         size="sm"
                         src="user.svg"
                     />
-
                     <Flex
                         flexDir="column"
                         ml={4}

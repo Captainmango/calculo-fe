@@ -1,4 +1,4 @@
-import { Button, ButtonGroup, Center, Container, Divider, Flex, Heading, Text } from '@chakra-ui/react';
+import { Button, ButtonGroup, Container, Divider, Flex, Heading, Text } from '@chakra-ui/react';
 import type { NextPage } from 'next'
 import Link from 'next/link';
 import LandingPage from '../components/Layout/Landing';

@@ -12,7 +12,6 @@ export default async function handler(
         .then(data => {
             const expenses: Expense[] = data?.data.map(expense => {
                 expense.categories.map(category => {
-                    //@ts-ignore
                     category.name = CategoryEnum[category.name]
                 })
                 return expense

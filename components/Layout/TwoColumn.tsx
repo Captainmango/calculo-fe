@@ -1,8 +1,7 @@
-import { Box, Container } from "@chakra-ui/react"
+import { Box } from "@chakra-ui/react"
 import MobileDrawer from "../Shared/Sidebar/MobileDrawer"
 import Sidebar from "../Shared/Sidebar/Sidebar"
 
-//@ts-ignore
 const TwoColumn = ({ children }) => {
     return (
         <Box display="flex">
